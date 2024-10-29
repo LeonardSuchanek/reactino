@@ -9,7 +9,7 @@ import Button from "../components/Button";
 import ExternalLinkCard from "../components/ExternalLinkCard";
 import Checkbox from "../components/Checkbox";
 import cardMarkup from "../data/cardMarkup";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Home = () => {
 
@@ -17,11 +17,73 @@ const Home = () => {
   // Ref für die Lektion auswählen Sektion
   const lektionRef = useRef<HTMLDivElement | null>(null);
 
+  // Wo steht das Carousel
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   // Funktion, um zur Lektion auswählen Sektion zu scrollen
   const scrollToLektion = () => {
     if (lektionRef.current) {
       lektionRef.current.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  //Alle Karten in einem Array für map
+  const cards = [
+    <Card
+      key="1"
+      thumbnail={CardThumbnail}
+      date="June 15th, 2023"
+      title="Lektion 1"
+      description="Visit the Getting Started page and learn about its features."
+      callToActionText="Get Started"
+      calllToActionLink="#"
+    />,
+    <Card
+      key="2"
+      thumbnail={CardThumbnail}
+      date="June 15th, 2023"
+      title="Lektion 2"
+      description="Let's take a look at what components are available."
+      callToActionText="Go to Components Page"
+      calllToActionLink="#"
+    />,
+    <ExternalLinkCard
+      key="3"
+      thumbnail={CardThumbnail}
+      date="June 15th, 2023"
+      title="Lektion 3"
+      description="Get ready for an in-depth exploration of the components."
+      callToActionText="Go to Github Repository"
+      calllToActionLink="#"
+    />,
+    <Card
+      key="4"
+      thumbnail={CardThumbnail}
+      date="June 20th, 2023"
+      title="Another Course"
+      description="Learn more about advanced components here."
+      callToActionText="Learn More"
+      calllToActionLink="/advanced"
+    />,
+    <ExternalLinkCard
+      key="5"
+      thumbnail={CardThumbnail}
+      date="June 25th, 2023"
+      title="More Code Examples"
+      description="Explore additional examples in the GitHub repository."
+      callToActionText="Explore"
+      calllToActionLink="https://github.com/marieooq/neo-brutalism-ui-library"
+    />,
+  ];
+
+  const totalSlides = Math.ceil(cards.length / 3);
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides); // Zyklisches Scrollen nach vorne
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides); // Zyklisches Scrollen nach hinten
   };
 
   return (
@@ -50,45 +112,34 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section ref={lektionRef} className="bg-yellow-200 w-full md:h-full snap-start snap-always shrink-0 ">
-        <div className="px-5 md:px-24 h-full py-20 2xl:p-32">
-          <h2 className="text-6xl md:text-7xl mb-12 tracking-tight font-bold">
-            Lektion auswählen
-          </h2>
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="md:w-[30%] mb-12 md:mb-0">
-              <Card
-                thumbnail={CardThumbnail}
-                date="June 15th, 2023"
-                title="What is Neo Brutallism UI?"
-                description="Visit the Getting Started page and learn about its features."
-                callToActionText="Get Started"
-                calllToActionLink="/overview"
-              />
-            </div>
-            <div className="md:w-[30%] mb-12 md:mb-0">
-              <Card
-                thumbnail={CardThumbnail}
-                date="June 15th, 2023"
-                title="Want to browse the components?"
-                description="Let's take a look at what components are available. You can quickly integrate them into your project with copy and paste."
-                callToActionText="Go to Components Page"
-                calllToActionLink="components/card"
-              />
-            </div>
-            <div className="md:w-[30%]">
-              <ExternalLinkCard
-                thumbnail={CardThumbnail}
-                date="June 15th, 2023"
-                title="Interested in viewing the code?"
-                description="Get ready for an in-depth exploration of the components in action within the codebase. Let's dive deep into how these components work behind the scenes!"
-                callToActionText="Go to Github Repository"
-                calllToActionLink="https://github.com/marieooq/neo-brutalism-ui-library"
-              />
+      <div className="snap-mandatory snap-y overflow-scroll">
+        <section ref={lektionRef} className="bg-yellow-200 w-full md:h-full snap-start snap-always shrink-0 ">
+          <div className="px-5 md:px-24 h-full py-20 2xl:p-32">
+            <h2 className="text-6xl md:text-7xl mb-12 tracking-tight font-bold">
+              Lektion auswählen
+            </h2>
+            <div className="relative flex justify-center items-center">
+
+              <Button onClick={handlePrevSlide} rounded="full" color="orange" buttonText="&lt;" />
+
+              <div className="w-full max-w-5xl overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {cards.map((card, index) => (
+                    <div key={index} className="w-1/3 flex-shrink-0 p-4">
+                      {card}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Button onClick={handleNextSlide} rounded="full" color="orange" buttonText="&gt;" />
+
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <section className="bg-violet-100 w-full h-auto snap-start snap-always shrink-0 ">
         <div className="px-5 md:px-24 h-full py-20 2xl:p-32 flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-6/12 md:h-full flex flex-col md:mr-12 mb-12 md:mb-0">
@@ -113,19 +164,19 @@ const Home = () => {
               engagement. Experience the difference of services, all at no cost,
               and take your web design to the next level!
             </p>
-              <Button
-                buttonText="Get Started"
-                rounded="full"
-                size="lg"
-                color="lime"
-                className="w-[200px]"
-              />
+            <Button
+              buttonText="Get Started"
+              rounded="full"
+              size="lg"
+              color="lime"
+              className="w-[200px]"
+            />
           </div>
         </div>
       </section>
       <footer className="w-full h-[200px] m-auto flex justify-between items-center px-5 md:px-24 2xl:p-32 bg-black">
         <div>
-            Reactino.
+          Reactino.
         </div>
         <div>
           <small className="text-white">
