@@ -65,7 +65,7 @@ const Home = () => {
       callToActionText="Learn More"
       calllToActionLink="/advanced"
     />,
-    <ExternalLinkCard
+    <Card
       key="5"
       thumbnail={CardThumbnail}
       date="June 25th, 2023"
@@ -88,7 +88,7 @@ const Home = () => {
 
   return (
     <div className="snap-mandatory snap-y overflow-scroll">
-      <section className="bg-lime-100 w-full md:h-screen lg:h-full snap-start snap-always shrink-0">
+      <section className="mt-20 bg-lime-100 w-full md:h-screen lg:h-full snap-start snap-always shrink-0">
         <div className="px-5 md:px-24 h-full py-20 2xl:p-32 flex flex-col md:flex-row justify-between items-center">
           <div className="flex-1 md:mr-12 mb-12 md:mb-0">
             <h2 className="text-6xl md:text-7xl mb-4 tracking-tight font-bold">
@@ -112,7 +112,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <div className="snap-mandatory snap-y overflow-scroll">
+      <div className="snap-mandatory snap-y">
         <section ref={lektionRef} className="bg-yellow-200 w-full md:h-full snap-start snap-always shrink-0 ">
           <div className="px-5 md:px-24 h-full py-20 2xl:p-32">
             <h2 className="text-6xl md:text-7xl mb-12 tracking-tight font-bold">
