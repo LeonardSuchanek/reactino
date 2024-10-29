@@ -123,6 +123,7 @@ const Home = () => {
               <Button onClick={handlePrevSlide} rounded="full" color="orange" buttonText="&lt;" />
 
               <div className="w-full max-w-5xl overflow-hidden">
+                {/* Karusell */}
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -135,7 +136,18 @@ const Home = () => {
                 </div>
               </div>
               <Button onClick={handleNextSlide} rounded="full" color="orange" buttonText="&gt;" />
+            </div>
 
+            {/* Punktnavigation */}
+            <div className="flex justify-center mt-4">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <span
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`mx-1 w-3 h-3 rounded-full cursor-pointer ${index === currentSlide ? "bg-black" : "bg-gray-400"
+                    }`}
+                ></span>
+              ))}
             </div>
           </div>
         </section>
