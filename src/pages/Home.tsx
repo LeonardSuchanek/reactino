@@ -7,7 +7,6 @@ import PromotionImageMobile from "../assets/neo-brutalism-image3-mobile.jpg";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import ExternalLinkCard from "../components/ExternalLinkCard";
-import Checkbox from "../components/Checkbox";
 import cardMarkup from "../data/cardMarkup";
 import { useRef, useState } from "react";
 
