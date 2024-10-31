@@ -3,6 +3,7 @@ import Button from "./Button";
 import menuIcon from "../assets/menu.svg";
 import closeIcon from "../assets/close.svg";
 import githubIcon from "../assets/github.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -55,9 +56,13 @@ const Header = () => {
         ></div>
         <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm bg-white border-r overflow-y-auto">
           <div className="flex justify-center items-center h-20 p-5">
-            <p>
-              NEO-UI.
-            </p>
+            <Link
+              to="/"
+              className="mr-auto text-2xl font-bold leading-none"
+              onClick={closeSideMenu}
+            >
+              Reactino
+            </Link>
             <div>
               <button className="navbar-close" onClick={closeSideMenu}>
                 <img src={closeIcon} alt="close" className="w-6 h-6" />
@@ -74,8 +79,10 @@ const Header = () => {
                   className="inliine-block hover:underline hover:underline-offset-8 mb-4"
                   onClick={closeSideMenu}
                 >
-                  <p>Overview</p>
+                  <Link to={"/overview"}>Overview</Link>
                 </li>
+              </div>
+              <div className="pb-12">
               </div>
               <div className="pb-4">
                 <li className="inline-block cursor-pointer">
