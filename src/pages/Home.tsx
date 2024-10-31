@@ -35,7 +35,7 @@ const Home = () => {
       title="Lektion 1"
       description="Visit the Getting Started page and learn about its features."
       callToActionText="Get Started"
-      calllToActionLink="#"
+      calllToActionLink="/lesson/1"
     />,
     <Card
       key="2"
@@ -44,16 +44,16 @@ const Home = () => {
       title="Lektion 2"
       description="Let's take a look at what components are available."
       callToActionText="Go to Components Page"
-      calllToActionLink="#"
+      calllToActionLink="/lesson/2"
     />,
-    <ExternalLinkCard
+    <Card
       key="3"
       thumbnail={CardThumbnail}
       date="June 15th, 2023"
       title="Lektion 3"
       description="Get ready for an in-depth exploration of the components."
       callToActionText="Go to Github Repository"
-      calllToActionLink="#"
+      calllToActionLink="/lesson/3"
     />,
     <Card
       key="4"
@@ -62,7 +62,7 @@ const Home = () => {
       title="Another Course"
       description="Learn more about advanced components here."
       callToActionText="Learn More"
-      calllToActionLink="/advanced"
+      calllToActionLink="/lesson/4"
     />,
     <Card
       key="5"
@@ -71,7 +71,7 @@ const Home = () => {
       title="More Code Examples"
       description="Explore additional examples in the GitHub repository."
       callToActionText="Explore"
-      calllToActionLink="https://github.com/marieooq/neo-brutalism-ui-library"
+      calllToActionLink="/lesson/5"
     />,
   ];
 
@@ -87,7 +87,7 @@ const Home = () => {
 
   return (
     <div className="snap-mandatory snap-y overflow-scroll">
-      <section className="mt-20 bg-lime-100 w-full md:h-screen lg:h-full snap-start snap-always shrink-0">
+      <section className="bg-lime-100 w-full md:h-screen lg:h-full snap-start snap-always shrink-0">
         <div className="px-5 md:px-24 h-full py-20 2xl:p-32 flex flex-col md:flex-row justify-between items-center">
           <div className="flex-1 md:mr-12 mb-12 md:mb-0">
             <h2 className="text-6xl md:text-7xl mb-4 tracking-tight font-bold">

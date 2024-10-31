@@ -4,12 +4,10 @@ import Checkbox from "../Checkbox";
 const Lesson1 = () => {
   return (
     <div>
-      <h1 className="font-bold capitalize text-4xl mb-12"> Getting Started</h1>
+      <h1 className="font-bold capitalize text-4xl mb-12"> Lektion 1</h1>
       <section className="mb-12">
         <h2 className="text-2xl mb-6">
-          Get ready to revolutionize your web design with Neo-Brutalism UI
-          library, the amazing solution for creating stunning webpages. Here's
-          why you'll love it!
+          Beschreibungstext für Lektion 1. Zuerst Theorie und dann eine Übung.
         </h2>
         <div className="mb-8">
           <div className="mb-4 leading-relaxed flex">
