@@ -6,7 +6,7 @@ export interface navObject {
   linkTo: String;
 }
 
-const BaseLession = () => {
+const BaseLesson = () => {
 
   let navItems: navObject[] = [
     { name: "Home", linkTo: "/home" },
@@ -57,4 +57,4 @@ const BaseLession = () => {
   );
 };
 
-export default BaseLession;
+export default BaseLesson;
