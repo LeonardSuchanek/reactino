@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import BaseLession from "./components/BaseLesson";
 import Lesson1 from "./components/lessons/Lesson1";
 import Layout from "./components/Layout";
+import Lesson2 from "./components/lessons/Lesson2";
 
 const AppRouter = () => (
   <Routes>
@@ -10,6 +11,7 @@ const AppRouter = () => (
       <Route index element={<Home />} />
       <Route path="/lesson" element={<BaseLession />}>
         <Route path="1" element={<Lesson1 />} />
+        <Route path="2" element={<Lesson2 />} />
       </Route>
     </Route>
     <Route />

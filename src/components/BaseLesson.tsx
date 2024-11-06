@@ -1,7 +1,19 @@
 import { Outlet, Link } from "react-router-dom";
 import classNames from "classnames";
 
+export interface navObject {
+  name: String;
+  linkTo: String;
+}
+
 const BaseLession = () => {
+
+  let navItems: navObject[] = [
+    { name: "Home", linkTo: "/home" },
+    { name: "Lektion 1", linkTo: "/lesson/1" },
+    { name: "Lektion 2", linkTo: "/lesson/1" }
+  ];
+
   return (
     <section className="w-full flex">
       <div className="hidden md:block bg-violet-300 fixed top-20 left-0 w-[360px] h-screen overflow-y-scroll p-24">
