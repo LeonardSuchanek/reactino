@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CardThumbnail from "../assets/neo-brutalism-image2.jpg";
@@ -6,42 +5,34 @@ import PromotionImage from "../assets/neo-brutalism-image3.jpg";
 import PromotionImageMobile from "../assets/neo-brutalism-image3-mobile.jpg";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import ExternalLinkCard from "../components/ExternalLinkCard";
 import cardMarkup from "../data/cardMarkup";
 import { useRef, useState } from "react";
 
 const Home = () => {
-
-
-  // Ref für die Lektion auswählen Sektion
   const lektionRef = useRef<HTMLDivElement | null>(null);
-
-  // Wo steht das Carousel
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Funktion, um zur Lektion auswählen Sektion zu scrollen
   const scrollToLektion = () => {
     if (lektionRef.current) {
       lektionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  //Alle Karten in einem Array für map
   const cards = [
     <Card
       key="1"
       thumbnail={CardThumbnail}
-      date="June 15th, 2023"
-      title="Lektion 1"
+      subtitle="Lektion 1"
+      title="Einführung in React und Komponenten"
       description="Visit the Getting Started page and learn about its features."
-      callToActionText="Get Started"
+      callToActionText="Jetzt lernen"
       calllToActionLink="/lesson/1"
     />,
     <Card
       key="2"
       thumbnail={CardThumbnail}
-      date="June 15th, 2023"
-      title="Lektion 2"
+      subtitle="Lektion 2"
+      title="Props und State"
       description="Let's take a look at what components are available."
       callToActionText="Go to Components Page"
       calllToActionLink="/lesson/2"
@@ -49,8 +40,8 @@ const Home = () => {
     <Card
       key="3"
       thumbnail={CardThumbnail}
-      date="June 15th, 2023"
-      title="Lektion 3"
+      subtitle="Lektion 3"
+      title="Ereignisse und Bedingtes Rendern"
       description="Get ready for an in-depth exploration of the components."
       callToActionText="Go to Github Repository"
       calllToActionLink="/lesson/3"
@@ -58,8 +49,8 @@ const Home = () => {
     <Card
       key="4"
       thumbnail={CardThumbnail}
-      date="June 20th, 2023"
-      title="Another Course"
+      subtitle="Lektion 4"
+      title=""
       description="Learn more about advanced components here."
       callToActionText="Learn More"
       calllToActionLink="/lesson/4"
@@ -67,8 +58,8 @@ const Home = () => {
     <Card
       key="5"
       thumbnail={CardThumbnail}
-      date="June 25th, 2023"
-      title="More Code Examples"
+      subtitle="Lektion 5"
+      title=""
       description="Explore additional examples in the GitHub repository."
       callToActionText="Explore"
       calllToActionLink="/lesson/5"
@@ -78,11 +69,11 @@ const Home = () => {
   const totalSlides = Math.ceil(cards.length / 3);
 
   const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides); // Zyklisches Scrollen nach vorne
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
   const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides); // Zyklisches Scrollen nach hinten
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   return (
@@ -93,9 +84,16 @@ const Home = () => {
             <h2 className="text-6xl md:text-7xl mb-4 tracking-tight font-bold">
               Lerne React in 10 Minuten.
             </h2>
-            <p className="text-2xl mb-8">Der einfache Einstieg in die Welt von React – interaktiv und unterhaltsam.
+            <p className="text-2xl mb-8">
+              Der einfache Einstieg in die Welt von React – interaktiv und
+              unterhaltsam.
             </p>
-            <Button onClick={scrollToLektion} rounded="full" color="orange" buttonText="Zu den Lektionen ↓" />
+            <Button
+              onClick={scrollToLektion}
+              rounded="full"
+              color="orange"
+              buttonText="Zu den Lektionen ↓"
+            />
           </div>
           <div className="flex-1 w-full h-full max-h-[600px] border-black border-2 rounded-lg shadow-[8px_8px_0px_rgba(0,0,0,1)]">
             <img
@@ -112,39 +110,52 @@ const Home = () => {
         </div>
       </section>
       <div className="snap-mandatory snap-y">
-        <section ref={lektionRef} className="bg-yellow-200 w-full md:h-full snap-start snap-always shrink-0 ">
+        <section
+          ref={lektionRef}
+          className="bg-yellow-200 w-full md:h-full snap-start snap-always shrink-0 "
+        >
           <div className="px-5 md:px-24 h-full py-20 2xl:p-32">
             <h2 className="text-6xl md:text-7xl mb-12 tracking-tight font-bold">
               Lektion auswählen
             </h2>
             <div className="relative flex justify-center items-center">
-
-              <Button onClick={handlePrevSlide} rounded="full" color="orange" buttonText="&lt;" />
-
+              <Button
+                onClick={handlePrevSlide}
+                rounded="full"
+                color="orange"
+                buttonText="&lt;"
+              />
               <div className="w-full max-w-5xl overflow-hidden">
-                {/* Karusell */}
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
                   {cards.map((card, index) => (
-                    <div key={index} className="w-1/3 flex-shrink-0 p-4">
+                    <div
+                      key={index}
+                      className="w-full md:w-1/3 flex-shrink-0 p-4"
+                    >
                       {card}
                     </div>
                   ))}
                 </div>
               </div>
-              <Button onClick={handleNextSlide} rounded="full" color="orange" buttonText="&gt;" />
+              <Button
+                onClick={handleNextSlide}
+                rounded="full"
+                color="orange"
+                buttonText="&gt;"
+              />
             </div>
 
-            {/* Punktnavigation */}
             <div className="flex justify-center mt-4">
               {Array.from({ length: totalSlides }).map((_, index) => (
                 <span
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`mx-1 w-3 h-3 rounded-full cursor-pointer ${index === currentSlide ? "bg-black" : "bg-gray-400"
-                    }`}
+                  className={`mx-1 w-3 h-3 rounded-full cursor-pointer ${
+                    index === currentSlide ? "bg-black" : "bg-gray-400"
+                  }`}
                 ></span>
               ))}
             </div>
@@ -186,9 +197,7 @@ const Home = () => {
         </div>
       </section>
       <footer className="w-full h-[200px] m-auto flex justify-between items-center px-5 md:px-24 2xl:p-32 bg-black">
-        <div>
-          Reactino.
-        </div>
+        <div>Reactino.</div>
         <div>
           <small className="text-white">
             &copy;

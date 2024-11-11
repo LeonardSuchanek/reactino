@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-import Checkbox from "../Checkbox";
+import Checkbox from "../../Checkbox";
 
 const Lesson1 = () => {
   return (
     <div>
-      <h1 className="font-bold capitalize text-4xl mb-12"> Lektion 1</h1>
+      <h1 className="font-bold capitalize text-4xl mb-12"> Lektion 2</h1>
       <section className="mb-12">
         <h2 className="text-2xl mb-6">
           Beschreibungstext für Lektion 1. Zuerst Theorie und dann eine Übung.
