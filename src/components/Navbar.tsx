@@ -8,9 +8,11 @@ export interface navObject {
 
 const Navbar = ({ navItems }: { navItems: navObject[] }) => {
   return (
-    <div className="hidden md:block bg-violet-300 fixed top-20 left-0 w-[360px] h-screen overflow-y-scroll p-24">
-      <ul className="flex flex-col">
-
+    <div className="hidden md:block bg-violet-300 fixed left-0 w-[360px] h-screen overflow-y-scroll p-24 pt-8">
+      <Link to="/" className="text-2xl font-bold">
+        Reactino
+      </Link>
+      <ul className="flex flex-col pt-20">
         {navItems.map((item, index) => (
           <li
             key={index + 1}

@@ -19,19 +19,8 @@ const Header = () => {
       </Link>
         <nav className="hidden md:block w-1/2">
           <ul className="flex justify-end items-center space-x-4">
-            <li className="inline-block hover:underline hover:underline-offset-8">
-              <p>Components</p>
-            </li>
-            <li className="inline-block p-2 cursor-pointer">
-              <a
-                href="https://github.com/marieooq/neo-brutalism-ui-library"
-                target="_blank"
-              >
-                <img src={githubIcon} alt="github" className="w-6 h-6" />
-              </a>
-            </li>
             <li>
-              <Button buttonText="Get Started" />
+              <Button color={"red"} buttonText="Jetzt starten" />
             </li>
           </ul>
         </nav>
@@ -73,26 +62,8 @@ const Header = () => {
             <ul className="flex flex-col">
               <div className="pb-8">
                 <span className="text-lg font-bold block mb-4">
-                  Getting started
+                  Jetzt starten
                 </span>
-                <li
-                  className="inliine-block hover:underline hover:underline-offset-8 mb-4"
-                  onClick={closeSideMenu}
-                >
-                  <Link to={"/overview"}>Overview</Link>
-                </li>
-              </div>
-              <div className="pb-12">
-              </div>
-              <div className="pb-4">
-                <li className="inline-block cursor-pointer">
-                  <a
-                    href="https://github.com/marieooq/neo-brutalism-ui-library"
-                    target="_blank"
-                  >
-                    <img src={githubIcon} alt="github" className="w-6 h-6" />
-                  </a>
-                </li>
               </div>
             </ul>
           </div>
