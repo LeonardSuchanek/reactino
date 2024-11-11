@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Checkbox from "../../Checkbox";
 import CodeBox from "../../CodeBox";
+import Button from "../../Button";
 
 const Lesson1 = () => {
   return (
@@ -110,8 +111,13 @@ const Lesson1 = () => {
           mit der React DevTools Erweiterung.
         </p>
       </section>
-    </div>
 
+      <div className="">
+        <Link to="chapter/1">
+          <Button buttonText="Aufgabe 1 →" className="" color="red"/>
+        </Link>
+      </div>
+    </div>
   );
 };
 
