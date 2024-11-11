@@ -5,7 +5,15 @@ import Button from "../../Button";
 
 const L1C1 = () => {
   const [code, setCode] = useState<string>(
-    "console.log('Hello Monaco Editor');"
+    `
+import React from 'react';
+
+function ProjectsPage() {
+  return <h1>Projects</h1>;
+}
+
+export default ProjectsPage;
+`
   );
   const [savedCode, setSavedCode] = useState<string | null>(null); // Variable, um den gespeicherten Code zu halten
   const editorRef = useRef<any>(null); // Referenz auf den Editor
@@ -48,18 +56,20 @@ const L1C1 = () => {
     }
   };
 
-    // Funktion, die den aktuellen Code in eine andere Variable speichert
-    const saveCode = () => {
-      // mit KI prüfen, ob der Code korrekt ist
-      setSavedCode(code);
-      console.log("Gespeicherter Code:", savedCode); // Du kannst den Code hier weiterverarbeiten
-    };
+  // Funktion, die den aktuellen Code in eine andere Variable speichert
+  const saveCode = () => {
+    // mit KI prüfen, ob der Code korrekt ist
+    setSavedCode(code);
+    console.log("Gespeicherter Code:", savedCode); // Du kannst den Code hier weiterverarbeiten
+  };
 
     
 
   return (
     <div className="">
-      <h1 className="font-bold text-4xl mb-12">Monaco Editor in React</h1>
+      <h1 className="font-bold text-4xl mb-12">Aufgabe 1: Deine erste Komponente</h1>
+      <p className="mb-2">Erstelle eine Funktion Komponente die "Hello World" zurückgibt.</p>
+
       <MonacoEditor
         className="pb-4"
         height="200px"
