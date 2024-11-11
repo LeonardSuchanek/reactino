@@ -1,35 +1,45 @@
-import CodeBox from "../../CodeBox";
-import { render } from "react-dom";
 import AceEditor from "react-ace";
+import { useState } from "react";
 
+// Importiere die gewünschten Sprach- und Theme-Dateien
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/theme-monokai";
+
+// Optional: Autocomplete und Snippets aktivieren
+import "ace-builds/src-noconflict/ext-language_tools";
 
 const L1C1 = () => {
+  const [code, setCode] = useState<string>("// Start writing code here!");
+
+  const handleCodeChange = (newCode: string) => {
+    setCode(newCode);
+  };
+
   return (
-    <>
+    <div style={{ padding: "20px" }}>
+      <h1 className="font-bold text-4xl mb-12">
+        Einführung in React-Komponenten
+      </h1>
       <AceEditor
-        placeholder="Placeholder Text"
-        mode="javascript"
-        theme="monokai"
-        name="blah2"
-        onLoad={this.onLoad}
-        onChange={this.onChange}
-        fontSize={14}
-        lineHeight={19}
-        showPrintMargin={true}
-        showGutter={true}
-        highlightActiveLine={true}
-        value={`function onLoad(editor) {
-  console.log("i've loaded");
-}`}
+        mode="javascript" // Spracheinstellung
+        theme="monokai" // Theme
+        name="editor" // Einzigartiger Name für Editor-Instanz
+        fontSize={16}
+        width="100%"
+        height="400px"
+        value={code}
+        onChange={handleCodeChange} // Update-Funktion bei Codeänderung
+        editorProps={{ $blockScrolling: true }}
         setOptions={{
-          enableBasicAutocompletion: false,
-          enableLiveAutocompletion: false,
-          enableSnippets: false,
-          enableMobileMenu: true,
+          enableBasicAutocompletion: true, // Autovervollständigung
+          enableLiveAutocompletion: true,
+          enableSnippets: true,
           showLineNumbers: true,
           tabSize: 2,
-        }} />
-    </>);
+        }}
+      />
+    </div>
+  );
 };
 
 export default L1C1;
