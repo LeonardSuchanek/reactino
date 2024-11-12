@@ -5,25 +5,25 @@ import Button from "../../Button";
 
 const L1C1 = () => {
   const [code, setCode] = useState<string>(
-    `
+    `//Beginne hier den Code zu schreiben
 import React from 'react';
 
 function ProjectsPage() {
-  return <h1>Projects</h1>;
+  return <h1>Hello World</h1>;
 }
 
 export default ProjectsPage;
-`
-  );
+`);
   const [savedCode, setSavedCode] = useState<string | null>(null); // Variable, um den gespeicherten Code zu halten
   const editorRef = useRef<any>(null); // Referenz auf den Editor
 
+
   // Fehler, die wir manuell setzen möchten
-  const markers : monaco.editor.IMarker[] = [
+  const markers: monaco.editor.IMarker[] = [
     {
       message: "Fehler: Undefinierte Variable.",
       severity: monaco.MarkerSeverity.Error, // Fehler
-      startLineNumber: 1, 
+      startLineNumber: 1,
       startColumn: 0,
       endLineNumber: 1,
       endColumn: 1,
@@ -46,7 +46,7 @@ export default ProjectsPage;
     }
   }, [editorRef.current]);
 
-  
+
 
   // Funktion, die den Code bei jeder Änderung speichert
   const handleEditorChange = (value: string | undefined) => {
@@ -63,29 +63,30 @@ export default ProjectsPage;
     console.log("Gespeicherter Code:", savedCode); // Du kannst den Code hier weiterverarbeiten
   };
 
-    
+
 
   return (
     <div className="">
       <h1 className="font-bold text-4xl mb-12">Aufgabe 1: Deine erste Komponente</h1>
-      <p className="mb-2">Erstelle eine Funktion Komponente die "Hello World" zurückgibt.</p>
+      <p className="mb-4">In dieser Aufgabe sollst du eine einfache Komponente, die den Text "Hello World" zurückgibt, erstellen. Dies ist der erste Schritt, um die Grundlagen der Komponenten-Entwicklung zu verstehen.</p>
+      <div className="pb-6 pt-2 rounded-lg bg-[#1E1E1E]">
+        <MonacoEditor
+          className=""
+          height="400px"
+          language="javascript" // Hier kannst du die Programmiersprache wählen
+          value={code} // Initialwert des Editors
+          onChange={handleEditorChange} // Funktion, die den Code beim Bearbeiten speichert
+          theme="vs-dark" // Editor-Theme
+          options={{ scrollBeyondLastLine: false, renderValidationDecorations: "off", fontSize: 14, minimap: { enabled: false }, }}
+          onMount={(editor) => {
+            console.log("Editor ist geladen:", editor);
 
-      <MonacoEditor
-        className="pb-4"
-        height="200px"
-        language="javascript" // Hier kannst du die Programmiersprache wählen
-        value={code} // Initialwert des Editors
-        onChange={handleEditorChange} // Funktion, die den Code beim Bearbeiten speichert
-        theme="vs-dark" // Editor-Theme
-        options={{ scrollBeyondLastLine: false, renderValidationDecorations: "off" }} 
-        onMount={(editor) => {
-          console.log("Editor ist geladen:", editor);
-          
-          editorRef.current = editor;  // Editor-Referenz speichern
-          setMarkers(editor);  // Marker setzen, wenn der Editor geladen wurde
-        }}
-      />
-      <Button onClick={saveCode} buttonText="Prüfen" className="" color="red" />
+            editorRef.current = editor;  // Editor-Referenz speichern
+            setMarkers(editor);  // Marker setzen, wenn der Editor geladen wurde
+          }}
+        />
+      </div>
+      <Button onClick={saveCode} buttonText="Prüfen" className="mt-4" color="red" />
     </div>
   );
 };

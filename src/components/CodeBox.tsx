@@ -1,6 +1,6 @@
 
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark, dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 // CodeBox-Komponente zur Anzeige von Code in formatierten Boxen
 interface CodeBoxProps {
@@ -17,7 +17,7 @@ function CodeBox({ code }: CodeBoxProps) {
           className="rounded-lg"
         >
           {code}
-          
+
         </SyntaxHighlighter>
       </div>
     </div>

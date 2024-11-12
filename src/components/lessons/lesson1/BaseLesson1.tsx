@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Checkbox from "../../Checkbox";
 import CodeBox from "../../CodeBox";
 import Button from "../../Button";
 
@@ -114,7 +113,7 @@ const Lesson1 = () => {
 
       <div className="">
         <Link to="chapter/1">
-          <Button buttonText="Aufgabe 1 →" className="" color="red"/>
+          <Button buttonText="Aufgabe 1 →" className="" color="red" />
         </Link>
       </div>
     </div>
