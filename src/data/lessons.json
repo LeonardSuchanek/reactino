@@ -1,0 +1,7 @@
+{"lesson1":{
+    "task1": {
+        "title": "Deine erste Komponente",
+        "description": "Erstelle eine Komponente, die den Text Hello World anzeigt.",
+        "solution": "import React from 'react'; function ProjectsPage() { return <h1>Hello World</h1>; } export default ProjectsPage; "
+    }
+}}
