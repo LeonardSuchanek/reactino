@@ -14,6 +14,7 @@ const L1C1 = () => {
 
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
+
   const handleEditorDidMount = (
     editor: monaco.editor.IStandaloneCodeEditor
   ) => {
@@ -25,6 +26,7 @@ const L1C1 = () => {
 
     try {
       console.log(input, solution);
+
 
       const messages = [
         {
@@ -62,7 +64,8 @@ const L1C1 = () => {
     }
   };
 
-  const onButtonClicked = () => {
+
+   const onButtonClicked = () => {
     // TODO: mit KI prüfen, ob der Code korrekt ist
     if (editorRef.current) {
       handleSend();
@@ -103,6 +106,7 @@ const L1C1 = () => {
         color="red"
       />
       {response && <p className="mt-4">{response}</p>}
+
     </div>
   );
 };

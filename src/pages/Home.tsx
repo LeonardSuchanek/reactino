@@ -35,7 +35,7 @@ const Home = () => {
       subtitle="Lektion 2"
       title="Props und State"
       description="Let's take a look at what components are available."
-      callToActionText="Go to Components Page"
+      callToActionText="Jetzt lernen"
       calllToActionLink="/lesson/2"
     />,
     <Card
@@ -44,14 +44,14 @@ const Home = () => {
       subtitle="Lektion 3"
       title="Ereignisse und Bedingtes Rendern"
       description="Get ready for an in-depth exploration of the components."
-      callToActionText="Go to Github Repository"
+      callToActionText="Jetzt lernen"
       calllToActionLink="/lesson/3"
     />,
     <Card
       key="4"
       thumbnail={CardThumbnail}
       subtitle="Lektion 4"
-      title=""
+      title="Thema der Lektion"
       description="Learn more about advanced components here."
       callToActionText="Learn More"
       calllToActionLink="/lesson/4"
@@ -60,7 +60,7 @@ const Home = () => {
       key="5"
       thumbnail={CardThumbnail}
       subtitle="Lektion 5"
-      title=""
+      title="Thema der Lektion"
       description="Explore additional examples in the GitHub repository."
       callToActionText="Explore"
       calllToActionLink="/lesson/5"
@@ -155,9 +155,8 @@ const Home = () => {
                 <span
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`mx-1 w-3 h-3 rounded-full cursor-pointer ${
-                    index === currentSlide ? "bg-black" : "bg-gray-400"
-                  }`}
+                  className={`mx-1 w-3 h-3 rounded-full cursor-pointer ${index === currentSlide ? "bg-black" : "bg-gray-400"
+                    }`}
                 ></span>
               ))}
             </div>

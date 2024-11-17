@@ -14,13 +14,15 @@ const Header = () => {
   return (
     <header className="bg-white h-20 w-full fixed top-0 z-40">
       <div className="w-full h-full m-auto flex justify-between items-center px-5 md:px-24">
-      <Link to="/" className="text-2xl font-bold">
-        Reactino
-      </Link>
+        <Link to="/" className="text-2xl font-bold">
+          Reactino
+        </Link>
         <nav className="hidden md:block w-1/2">
           <ul className="flex justify-end items-center space-x-4">
             <li>
-              <Button color={"red"} buttonText="Jetzt starten" />
+              <Link to="/lesson/1">
+                <Button color={"red"} buttonText="Jetzt starten" />
+              </Link>
             </li>
           </ul>
         </nav>
@@ -35,9 +37,8 @@ const Header = () => {
       </div>
       {/* side menu for mobile */}
       <div
-        className={`navbar-menu relative z-50 ${
-          showSideMenu ? "block" : "hidden"
-        }`}
+        className={`navbar-menu relative z-50 ${showSideMenu ? "block" : "hidden"
+          }`}
       >
         <div
           className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
