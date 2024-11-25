@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import services from "../../../utils/services"
-import Word from "../../Word";
 import Option from "../../Option";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import { ToastContainer } from "react-toastify";
@@ -10,15 +9,15 @@ import Button from "../../Button";
 
 const L1C2 = () => {
     const items = [
-        { id: uuid(), content: "function" },
-        { id: uuid(), content: "ProjectsPage()" },
-        { id: uuid(), content: "{" },
-        { id: uuid(), content: "}" },
-        { id: uuid(), content: "</h1>" },
-        { id: uuid(), content: "<h1>" },
-        { id: uuid(), content: "return" },
-        { id: uuid(), content: "Hello World" },
-        { id: uuid(), content: ";" },
+        { id: uuid(), content: "function", color: "bg-red-100" },
+        { id: uuid(), content: "ProjectsPage()", color: "bg-pink-100" },
+        { id: uuid(), content: "{", color: "bg-yellow-100" },
+        { id: uuid(), content: "}", color: "bg-yellow-100" },
+        { id: uuid(), content: "</h1>", color: "bg-red-100" },
+        { id: uuid(), content: "<h1>", color: "bg-red-100" },
+        { id: uuid(), content: "return", color: "bg-red-100" },
+        { id: uuid(), content: "Hello World", color: "bg-red-100" },
+        { id: uuid(), content: ";", color: "bg-green-100" },
     ];
 
     const rowsBackend = {
@@ -45,15 +44,13 @@ const L1C2 = () => {
                 }
             >
                 <div>
-                    <h2 className="text-3xl font-medium">
+                    <h1 className="font-bold text-4xl mb-12">
                         Bringe die Bauteile einer Komponente in die richtge Reihenfolge.
-                    </h2>
+                    </h1>
+                    <p>Ziehe dafür die Bauteile in der richtigen Reigenfolge auf die Linie. Zum Prüfen deiner Antwort nutze den Button.</p>
                     <div className="answer-wrapper mt-10">
                         {winReady ? (
-                            <Droppable
-                                droppableId="Answer"
-                                direction="horizontal"
-                            >
+                            <Droppable droppableId="Answer" direction="horizontal">
                                 {(provided, snapshot) => {
                                     return (
                                         <div
