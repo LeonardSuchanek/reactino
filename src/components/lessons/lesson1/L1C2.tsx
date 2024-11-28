@@ -5,6 +5,7 @@ import Option from "../../Option";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import { ToastContainer } from "react-toastify";
 import Button from "../../Button";
+import { Link } from "react-router-dom";
 
 
 const L1C2 = () => {
@@ -127,7 +128,7 @@ const L1C2 = () => {
                         </Droppable>
                     ) : null}
 
-                    <div className="flex justify-center mt-10 md:mt-5">
+                    <div className="mt-10 mb-10 md:mt-5">
                         <Button onClick={() => services.handleSubmit(rows, setRows, items)} color="red" buttonText="Prüfe dein Antwort" />
                     </div>
                 </div>
@@ -143,6 +144,12 @@ const L1C2 = () => {
                 draggable
                 pauseOnHover
             />
+
+            <div className="">
+                <Link to="/">
+                    <Button buttonText="Zurück zur Übersicht →" className="" color="lime" />
+                </Link>
+            </div>
         </main >
     );
 }

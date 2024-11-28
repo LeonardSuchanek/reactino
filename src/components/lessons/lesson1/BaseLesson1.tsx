@@ -4,32 +4,26 @@ import Button from "../../Button";
 
 const Lesson1 = () => {
   return (
-    <div className="">
-      <h1 className="font-bold text-4xl mb-12">
+    <div className="max-w-7xl md:justify-self-center ">
+      <h1 className="font-bold text-4xl md:text-5xl mb-12">
         Einführung in React-Komponenten
       </h1>
 
       {/* Einleitung */}
-      <section className="mb-8">
-        <p className="mb-2">
-          Components (Komponenten) erlauben es uns, das UI in unabhängige,
-          wiederverwendbare Teile zu unterteilen.
-        </p>
-        <p className="mb-2">
-          Jeder Teil kann isoliert entwickelt, getestet und gepflegt werden.
-        </p>
-        <p>
-          Die React DevTools Erweiterung für Chrome hilft uns, die
-          Komponentenhierarchie unserer Anwendung zu inspizieren.
-        </p>
+      <section className="mb-8 text-xl md:text-2xl">
+        Components (Komponenten) erlauben es uns, das UI in unabhängige,
+        wiederverwendbare Teile zu unterteilen.
+        Jeder Teil kann isoliert entwickelt, getestet und gepflegt werden.
+        Die React DevTools Erweiterung für Chrome hilft uns, die
+        Komponentenhierarchie unserer Anwendung zu inspizieren.
       </section>
 
       {/* JSX-Element erstellen und rendern */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-3xl mt-14 font-semibold mb-2">
           Einfache JSX-Elemente erstellen und rendern
         </h2>
-        <p className="mb-2">
+        <p className=" text-xl md:text-2xl mb-2">
           Ein einfaches JSX-Element, das direkt in den DOM gerendert wird:
         </p>
         <CodeBox
@@ -39,10 +33,10 @@ const Lesson1 = () => {
 
       {/* Funktionskomponente erstellen */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-3xl mt-14  font-semibold mb-2">
           Erstellen einer Funktionskomponente
         </h2>
-        <p className="mb-2">
+        <p className="mb-2 text-xl md:text-2xl">
           Eine Funktionskomponente ist eine einfache Möglichkeit,
           wiederverwendbare UI-Teile zu definieren.
         </p>
@@ -53,14 +47,14 @@ const Lesson1 = () => {
 
       {/* Komponente rendern */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-3xl mt-14  font-semibold mb-2">
           Rendering einer Komponente
         </h2>
-        <p className="mb-2">
+        <p className="mb-2 text-xl md:text-2xl">
           Verwenden Sie den Komponentennamen im PascalCase (z. B.
           &#60;HelloWorld /&#62;) für die Darstellung.
         </p>
-        <p className="mb-2">
+        <p className="mb-2 text-xl md:text-2xl">
           Andernfalls gibt es einen Fehler, da React zwischen HTML-Elementen
           (klein geschrieben) und Komponenten (PascalCase) unterscheidet.
         </p>
@@ -71,10 +65,10 @@ const Lesson1 = () => {
 
       {/* Komponenten-Zusammensetzung und Wiederverwendung */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-3xl mt-14  font-semibold mb-2">
           Komponenten-Zusammensetzung und Wiederverwendung
         </h2>
-        <p className="mb-2">
+        <p className="mb-2 text-xl md:text-2xl">
           Wir können Komponenten durch Verschachtelung wiederverwenden.
           Beispiel: App-Komponente, die mehrere Instanzen von HelloWorld
           rendert.
@@ -86,10 +80,10 @@ const Lesson1 = () => {
 
       {/* Klassenkomponente erstellen */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-3xl mt-14  font-semibold mb-2">
           Erstellen einer Klassenkomponente
         </h2>
-        <p className="mb-2">
+        <p className="mb-2 text-xl md:text-2xl">
           Alternativ kann eine Klasse verwendet werden, um eine Komponente zu
           erstellen. Hier ist ein Beispiel für die HelloWorld-Klasse mit der
           render-Methode.
@@ -101,10 +95,10 @@ const Lesson1 = () => {
 
       {/* Optional: Verwenden von React DevTools */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-3xl mt-14  font-semibold mb-2">
           Optional: Verwenden von React DevTools
         </h2>
-        <p>
+        <p className="text-xl md:text-2xl">
           Besuche eine Website wie netflix.com, instagram.com, facebook.com,
           airbnb.com oder dropbox.com und inspiziere die Komponentenhierarchie
           mit der React DevTools Erweiterung.

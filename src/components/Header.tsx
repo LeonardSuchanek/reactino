@@ -17,7 +17,7 @@ const Header = () => {
         <Link to="/" className="text-2xl font-bold">
           Reactino
         </Link>
-        <nav className="hidden md:block w-1/2">
+        <nav className="block w-1/2">
           <ul className="flex justify-end items-center space-x-4">
             <li>
               <Link to="/lesson/1">
@@ -25,49 +25,6 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-        </nav>
-        <button
-          className="md:hidden"
-          onClick={() => {
-            setShowSideMenu(true);
-          }}
-        >
-          <img src={menuIcon} alt="menu" className="w-6 h-6" />
-        </button>
-      </div>
-      {/* side menu for mobile */}
-      <div
-        className={`navbar-menu relative z-50 ${showSideMenu ? "block" : "hidden"
-          }`}
-      >
-        <div
-          className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
-          onClick={closeSideMenu}
-        ></div>
-        <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm bg-white border-r overflow-y-auto">
-          <div className="flex justify-center items-center h-20 p-5">
-            <Link
-              to="/"
-              className="mr-auto text-2xl font-bold leading-none"
-              onClick={closeSideMenu}
-            >
-              Reactino
-            </Link>
-            <div>
-              <button className="navbar-close" onClick={closeSideMenu}>
-                <img src={closeIcon} alt="close" className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-          <div className="p-5">
-            <ul className="flex flex-col">
-              <div className="pb-8">
-                <span className="text-lg font-bold block mb-4">
-                  Jetzt starten
-                </span>
-              </div>
-            </ul>
-          </div>
         </nav>
       </div>
     </header>

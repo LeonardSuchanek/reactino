@@ -83,7 +83,7 @@ const Home = () => {
       <section className="bg-lime-100 w-full md:h-screen lg:h-full snap-start snap-always shrink-0 pt-20">
         <div className="px-5 md:px-24 h-full py-20 2xl:p-32 flex flex-col md:flex-row justify-between items-center">
           <div className="flex-1 md:mr-12 mb-12 md:mb-0">
-            <h2 className="text-6xl md:text-7xl mb-4 tracking-tight font-bold">
+            <h2 className="text-5xl md:text-6xl mb-4 tracking-tight font-bold">
               Lerne React in 10 Minuten.
             </h2>
             <p className="text-2xl mb-8">
@@ -100,12 +100,12 @@ const Home = () => {
           <div className="flex-1 w-full h-full max-h-[600px] border-black border-2 rounded-lg shadow-[8px_8px_0px_rgba(0,0,0,1)]">
             <img
               src={PromotionImage}
-              alt="Graphic of a woman using a laptop with NEO-BRUTALISM UI design elements and colorful, bold shapes displayed on the screen."
+              alt=""
               className="w-full h-full max-h-[600px] object-cover hidden md:inline"
             />
             <img
-              src={PromotionImageMobile}
-              alt="Graphic of a woman using a laptop with NEO-BRUTALISM UI design elements and colorful, bold shapes displayed on the screen."
+              src={PromotionImage}
+              alt=""
               className="w-full h-full max-h-[600px] object-cover inline md:hidden"
             />
           </div>
@@ -117,7 +117,7 @@ const Home = () => {
           className="bg-yellow-200 w-full md:h-full snap-start snap-always shrink-0 "
         >
           <div className="px-5 md:px-24 h-full py-20 2xl:p-32">
-            <h2 className="text-6xl md:text-7xl mb-12 tracking-tight font-bold">
+            <h2 className="text-4xl md:text-5xl mb-12 tracking-tight font-bold">
               Lektion auswählen
             </h2>
             <div className="relative flex justify-center items-center">

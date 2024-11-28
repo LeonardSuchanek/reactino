@@ -4,6 +4,7 @@ import * as monaco from "monaco-editor";
 import Button from "../../Button";
 import { fetchChatGPTResponse } from "../../../utils/openai";
 import lessons from "../../../data/lessons.json";
+import { Link } from "react-router-dom";
 
 const L1C1 = () => {
   const [input, setinput] = useState<string>("import React from 'react';");
@@ -65,7 +66,7 @@ const L1C1 = () => {
   };
 
 
-   const onButtonClicked = () => {
+  const onButtonClicked = () => {
     // TODO: mit KI prüfen, ob der Code korrekt ist
     if (editorRef.current) {
       handleSend();
@@ -102,12 +103,18 @@ const L1C1 = () => {
       <Button
         onClick={onButtonClicked}
         buttonText="Prüfen"
-        className=""
+        className="mb-10"
         color="red"
       />
       {response && <p className="mt-4">{response}</p>}
+      <div className="">
+        <Link to="/lesson/1/chapter/2">
+          <Button buttonText="Aufgabe 2 →" className="" color="red" />
+        </Link>
+      </div>
 
     </div>
+
   );
 };
 

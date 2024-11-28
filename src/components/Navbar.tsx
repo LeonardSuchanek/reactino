@@ -17,7 +17,7 @@ const Navbar = ({ navItems }: { navItems: navObject[] }) => {
           <li
             key={index + 1}
             className={classNames(
-              "block hover:underline hover:underline-offset-8 mb-4"
+              "block hover:underline hover:underline-offset-8 mb-4 md:text-xl"
             )}
           >
             <Link to={item.linkTo}>{item.name}</Link>
