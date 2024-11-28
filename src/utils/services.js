@@ -39,7 +39,7 @@ const onDragEnd = (result, rows, setRows) => {
 };
 
 const handleSubmit = (rows, setRows, items) => {
-    const answer = "function ProjectsPage() { return <h1> Hello World </h1> ; }";
+    const answer = "function ProjectsPage() { return <h1> Hello World </h1> }";
     const res = rows.Answer.items.map((item) => item.content).join(" ");
     console.log(res);
     if (res == answer) {
