@@ -4,7 +4,7 @@ import Button from "../../Button";
 
 const Lesson1 = () => {
   return (
-    <div className="max-w-7xl md:justify-self-center ">
+    <div className="max-w-7xl md:justify-self-center">
       <h1 className="font-bold text-4xl md:text-5xl mb-12">
         Einführung in React-Komponenten
       </h1>

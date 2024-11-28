@@ -74,7 +74,7 @@ const L1C1 = () => {
 
   return (
     <div className="max-w-7xl md:justify-self-center ">
-      <h1 className="font-bold text-4xl mb-12">
+      <h1 className="font-bold text-4xl md:text-5xl mb-1">
         Aufgabe 1: {lessons.lesson1.task1.title}
       </h1>
       <p className="text-xl md:text-2xl mb-3">

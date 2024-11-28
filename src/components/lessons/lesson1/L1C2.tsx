@@ -69,14 +69,15 @@ const onDragEnd = (
 
 const L1C2 = () => {
   const items = [
-    { id: uuid(), content: "function", color: "bg-red-100" },
-    { id: uuid(), content: "ProjectsPage()", color: "bg-pink-100" },
-    { id: uuid(), content: "{", color: "bg-yellow-100" },
-    { id: uuid(), content: "}", color: "bg-yellow-100" },
-    { id: uuid(), content: "</h1>", color: "bg-red-100" },
-    { id: uuid(), content: "<h1>", color: "bg-red-100" },
-    { id: uuid(), content: "return", color: "bg-red-100" },
-    { id: uuid(), content: "Hello World", color: "bg-red-100" },
+    { id: uuid(), content: "function", color: "bg-white" },
+    { id: uuid(), content: "ProjectsPage()", color: "bg-white" },
+    { id: uuid(), content: "{", color: "bg-white" },
+    { id: uuid(), content: "}", color: "bg-white" },
+    { id: uuid(), content: "</h1>", color: "bg-white" },
+    { id: uuid(), content: "<h1>", color: "bg-white" },
+    { id: uuid(), content: "return", color: "bg-white" },
+    { id: uuid(), content: "Hello World", color: "bg-white" },
+    { id: uuid(), content: ";", color: "bg-white" },
   ];
 
   const rowsBackend: Rows = {
@@ -96,13 +97,15 @@ const L1C2 = () => {
   }, []);
 
   return (
-    <main>
-      <DragDropContext onDragEnd={(result) => onDragEnd(result, rows, setRows)}>
+    <main className="max-w-7xl md:justify-self-center ">
+      <DragDropContext
+        onDragEnd={(result) => services.onDragEnd(result, rows, setRows)}
+      >
         <div>
-          <h1 className="font-bold text-4xl mb-12">
+          <h1 className="font-bold text-4xl md:text-5xl mb-1">
             Bringe die Bauteile einer Komponente in die richtige Reihenfolge.
           </h1>
-          <p>
+          <p className="mb-8 text-xl md:text-2xl">
             Ziehe dafür die Bauteile in der richtigen Reigenfolge auf die Linie.
             Zum Prüfen deiner Antwort nutze den Button.
           </p>
@@ -119,21 +122,12 @@ const L1C2 = () => {
                       {rows["Answer"].items.map((item, index) => {
                         return (
                           <Draggable
-                            key={item.id}
-                            draggableId={item.id}
+                            key={item}
+                            draggableId={item}
                             index={index}
                           >
                             {(provided, snapshot) => {
-                              return (
-                                <div
-                                  ref={provided.innerRef}
-                                  {...provided.draggableProps}
-                                  {...provided.dragHandleProps}
-                                  className={`${item.color} shadow-lg py-2 px-4 rounded-lg`}
-                                >
-                                  {item.content}
-                                </div>
-                              );
+                              return <Option item={item} provided={provided} />;
                             }}
                           </Draggable>
                         );
@@ -198,13 +192,12 @@ const L1C2 = () => {
         pauseOnHover
       />
 
-      <div className="">
+      <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
         <Link to="/">
-          <Button
-            buttonText="Zurück zur Übersicht →"
-            className=""
-            color="lime"
-          />
+          <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
+        </Link>
+        <Link to="chapter/1">
+          <Button buttonText="Aufgabe 1 →" className="" color="red" />
         </Link>
       </div>
     </main>
