@@ -26,7 +26,7 @@ const Home = () => {
       subtitle="Lektion 1"
       title="Einführung in React und Komponenten"
       description="Visit the Getting Started page and learn about its features."
-      callToActionText="Jetzt lernen"
+      callToActionText="Jetzt lernen →"
       calllToActionLink="/lesson/1"
     />,
     <Card
@@ -35,7 +35,7 @@ const Home = () => {
       subtitle="Lektion 2"
       title="Props und State"
       description="Let's take a look at what components are available."
-      callToActionText="Jetzt lernen"
+      callToActionText="Jetzt lernen →"
       calllToActionLink="/lesson/2"
     />,
     <Card
@@ -44,26 +44,26 @@ const Home = () => {
       subtitle="Lektion 3"
       title="Ereignisse und Bedingtes Rendern"
       description="Get ready for an in-depth exploration of the components."
-      callToActionText="Jetzt lernen"
-      calllToActionLink="/lesson/3"
+      callToActionText="Jetzt lernen →"
+      calllToActionLink="/"
     />,
     <Card
       key="4"
       thumbnail={CardThumbnail}
       subtitle="Lektion 4"
       title="Thema der Lektion"
-      description="Learn more about advanced components here."
-      callToActionText="Learn More"
-      calllToActionLink="/lesson/4"
+      description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      callToActionText="Jetzt lernen →"
+      calllToActionLink="/"
     />,
     <Card
       key="5"
       thumbnail={CardThumbnail}
       subtitle="Lektion 5"
       title="Thema der Lektion"
-      description="ELorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
-      callToActionText="Explore"
-      calllToActionLink="/lesson/5"
+      description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+      callToActionText="Jetzt lernen →"
+      calllToActionLink="/"
     />,
   ];
 
