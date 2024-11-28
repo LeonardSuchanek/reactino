@@ -2,10 +2,70 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import services from "../../../utils/services";
 import Option from "../../Option";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  DropResult,
+} from "react-beautiful-dnd";
 import { ToastContainer } from "react-toastify";
 import Button from "../../Button";
 import { Link } from "react-router-dom";
+
+interface Item {
+  id: string;
+  content: string;
+  color: string;
+}
+
+interface Row {
+  items: Item[];
+}
+
+type Rows = { [key: string]: Row };
+
+const onDragEnd = (
+  result: DropResult,
+  rows: Rows,
+  setRows: React.Dispatch<React.SetStateAction<Rows>>
+) => {
+  if (!result.destination) return;
+
+  const { source, destination } = result;
+
+  // Check if the source and destination are the same
+  if (
+    source.droppableId === destination.droppableId &&
+    source.index === destination.index
+  ) {
+    return;
+  }
+
+  const sourceRow = rows[source.droppableId];
+  const destRow = rows[destination.droppableId];
+
+  if (!sourceRow || !destRow) {
+    console.error("Invalid source or destination row");
+    return;
+  }
+
+  const sourceItems = [...sourceRow.items];
+  const destItems = [...destRow.items];
+  const [removed] = sourceItems.splice(source.index, 1);
+  destItems.splice(destination.index, 0, removed);
+
+  setRows({
+    ...rows,
+    [source.droppableId]: {
+      ...sourceRow,
+      items: sourceItems,
+    },
+    [destination.droppableId]: {
+      ...destRow,
+      items: destItems,
+    },
+  });
+};
 
 const L1C2 = () => {
   const items = [
@@ -17,10 +77,9 @@ const L1C2 = () => {
     { id: uuid(), content: "<h1>", color: "bg-red-100" },
     { id: uuid(), content: "return", color: "bg-red-100" },
     { id: uuid(), content: "Hello World", color: "bg-red-100" },
-    { id: uuid(), content: ";", color: "bg-green-100" },
   ];
 
-  const rowsBackend = {
+  const rowsBackend: Rows = {
     Question: {
       items: items,
     },
@@ -38,9 +97,7 @@ const L1C2 = () => {
 
   return (
     <main>
-      <DragDropContext
-        onDragEnd={(result) => services.onDragEnd(result, rows, setRows)}
-      >
+      <DragDropContext onDragEnd={(result) => onDragEnd(result, rows, setRows)}>
         <div>
           <h1 className="font-bold text-4xl mb-12">
             Bringe die Bauteile einer Komponente in die richtige Reihenfolge.
@@ -62,12 +119,21 @@ const L1C2 = () => {
                       {rows["Answer"].items.map((item, index) => {
                         return (
                           <Draggable
-                            key={item}
-                            draggableId={item}
+                            key={item.id}
+                            draggableId={item.id}
                             index={index}
                           >
                             {(provided, snapshot) => {
-                              return <Option item={item} provided={provided} />;
+                              return (
+                                <div
+                                  ref={provided.innerRef}
+                                  {...provided.draggableProps}
+                                  {...provided.dragHandleProps}
+                                  className={`${item.color} shadow-lg py-2 px-4 rounded-lg`}
+                                >
+                                  {item.content}
+                                </div>
+                              );
                             }}
                           </Draggable>
                         );
