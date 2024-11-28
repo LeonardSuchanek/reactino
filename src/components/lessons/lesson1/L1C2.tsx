@@ -69,14 +69,14 @@ const onDragEnd = (
 
 const L1C2 = () => {
     const items = [
-        { id: uuid(), content: "function", color: "bg-red-100" },
-        { id: uuid(), content: "ProjectsPage()", color: "bg-pink-100" },
-        { id: uuid(), content: "{", color: "bg-yellow-100" },
-        { id: uuid(), content: "}", color: "bg-yellow-100" },
-        { id: uuid(), content: "</h1>", color: "bg-red-100" },
-        { id: uuid(), content: "<h1>", color: "bg-red-100" },
-        { id: uuid(), content: "return", color: "bg-red-100" },
-        { id: uuid(), content: "Hello World", color: "bg-red-100" },
+        { id: uuid(), content: "function", color: "bg-yellow-200" },
+        { id: uuid(), content: "ProjectsPage()", color: "bg-white" },
+        { id: uuid(), content: "{", color: "bg-white" },
+        { id: uuid(), content: "}", color: "bg-white" },
+        { id: uuid(), content: "</h1>", color: "bg-white" },
+        { id: uuid(), content: "<h1>", color: "bg-white" },
+        { id: uuid(), content: "return", color: "bg-white" },
+        { id: uuid(), content: "Hello World", color: "bg-white" },
     ];
 
     const rowsBackend: Rows = {
@@ -129,7 +129,11 @@ const L1C2 = () => {
                                                                     ref={provided.innerRef}
                                                                     {...provided.draggableProps}
                                                                     {...provided.dragHandleProps}
-                                                                    className={`${item.color} shadow-lg py-2 px-4 rounded-lg`}
+                                                                    className={`${item.color} p-4 
+                                                                    relative before:absolute before:w-6 before:h-6 before:rounded-full before:bg-white 
+                                                                    before:top-[-12px] before:left-[50%] before:transform before:translate-x-[-50%] 
+                                                                    after:absolute after:w-6 after:h-6 after:rounded-full after:bg-cyan-200 
+                                                                    after:bottom-[-12px] after:left-[50%] after:transform after:translate-x-[-50%]`}
                                                                 >
                                                                     {item.content}
                                                                 </div>
@@ -145,7 +149,7 @@ const L1C2 = () => {
                             </Droppable>
                         ) : null}
 
-                        <hr className=" border-gray-600" />
+                        <hr className="border-gray-600" />
                         <br />
                     </div>
                     {winReady ? (
