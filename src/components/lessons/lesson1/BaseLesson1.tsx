@@ -12,10 +12,10 @@ const Lesson1 = () => {
       {/* Einleitung */}
       <section className="mb-8 text-xl md:text-2xl">
         Components (Komponenten) erlauben es uns, das UI in unabhängige,
-        wiederverwendbare Teile zu unterteilen.
-        Jeder Teil kann isoliert entwickelt, getestet und gepflegt werden.
-        Die React DevTools Erweiterung für Chrome hilft uns, die
-        Komponentenhierarchie unserer Anwendung zu inspizieren.
+        wiederverwendbare Teile zu unterteilen. Jeder Teil kann isoliert
+        entwickelt, getestet und gepflegt werden. Die React DevTools Erweiterung
+        für Chrome hilft uns, die Komponentenhierarchie unserer Anwendung zu
+        inspizieren.
       </section>
 
       {/* JSX-Element erstellen und rendern */}
@@ -94,7 +94,7 @@ const Lesson1 = () => {
       </section>
 
       {/* Optional: Verwenden von React DevTools */}
-      <section className="mb-8">
+      <section className="mb-20">
         <h2 className="text-3xl mt-14  font-semibold mb-2">
           Optional: Verwenden von React DevTools
         </h2>
@@ -105,7 +105,10 @@ const Lesson1 = () => {
         </p>
       </section>
 
-      <div className="">
+      <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
+        <Link to="/">
+          <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
+        </Link>
         <Link to="chapter/1">
           <Button buttonText="Aufgabe 1 →" className="" color="red" />
         </Link>

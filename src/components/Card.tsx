@@ -24,10 +24,12 @@ const Card = ({
           <div className="px-6 py-5 text-left">
             {date && <p className="text-base mb-4">{date}</p>}
             {title && (
-              <h1 className="text-[32px] leading-8 font-bold mb-4">{title}</h1>
+              <h1 className="text-xl md:text-2xl leading-8 font-bold mb-4">
+                {title}
+              </h1>
             )}
             {description && (
-              <p className="text-xs mb-4 line-clamp-2 lg:line-clamp-4">
+              <p className="text-lg mb-4 line-clamp-2 lg:line-clamp-4">
                 {description}
               </p>
             )}

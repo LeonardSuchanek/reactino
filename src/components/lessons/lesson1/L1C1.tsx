@@ -15,7 +15,6 @@ const L1C1 = () => {
 
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
-
   const handleEditorDidMount = (
     editor: monaco.editor.IStandaloneCodeEditor
   ) => {
@@ -27,7 +26,6 @@ const L1C1 = () => {
 
     try {
       console.log(input, solution);
-
 
       const messages = [
         {
@@ -65,7 +63,6 @@ const L1C1 = () => {
     }
   };
 
-
   const onButtonClicked = () => {
     // TODO: mit KI prüfen, ob der Code korrekt ist
     if (editorRef.current) {
@@ -76,13 +73,15 @@ const L1C1 = () => {
   };
 
   return (
-    <div className="">
+    <div className="max-w-7xl md:justify-self-center ">
       <h1 className="font-bold text-4xl mb-12">
         Aufgabe 1: {lessons.lesson1.task1.title}
       </h1>
-      <p className="mb-2">{lessons.lesson1.task1.description}</p>
+      <p className="text-xl md:text-2xl mb-3">
+        {lessons.lesson1.task1.description}
+      </p>
 
-      <div className="max-w-3xl">
+      <div className="">
         <Editor
           className="pb-4 rounded"
           height="25vh"
@@ -106,15 +105,17 @@ const L1C1 = () => {
         className="mb-10"
         color="red"
       />
-      {response && <p className="mt-4">{response}</p>}
-      <div className="">
+      {response && <p className="text-xl md:text-2xl">{response}</p>}
+
+      <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
+        <Link to="/">
+          <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
+        </Link>
         <Link to="/lesson/1/chapter/2">
           <Button buttonText="Aufgabe 2 →" className="" color="red" />
         </Link>
       </div>
-
     </div>
-
   );
 };
 
