@@ -1,7 +1,20 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DropResult } from "react-beautiful-dnd";
 
-const onDragEnd = (result, rows, setRows) => {
+interface Item {
+    id: string;
+    content: string;
+    color: string;
+}
+
+interface Row {
+    items: Item[];
+}
+
+type Rows = { [key: string]: Row };
+
+const onDragEnd = (result: DropResult, rows: Rows, setRows: React.Dispatch<React.SetStateAction<Rows>>) => {
     if (!result.destination) return;
     const { source, destination } = result;
 
@@ -38,11 +51,11 @@ const onDragEnd = (result, rows, setRows) => {
     }
 };
 
-const handleSubmit = (rows, setRows, items) => {
+const handleSubmit = (rows: Rows, setRows: React.Dispatch<React.SetStateAction<Rows>>, items: Item[]) => {
     const answer = "function ProjectsPage() { return <h1> Hello World </h1> }";
     const res = rows.Answer.items.map((item) => item.content).join(" ");
     console.log(res);
-    if (res == answer) {
+    if (res === answer) {
         toast.success('Well done! That is the correct answer', {
             position: "top-right",
             autoClose: 5000,
@@ -80,7 +93,6 @@ const handleSubmit = (rows, setRows, items) => {
         });
     }
 };
-
 
 const services = {
     onDragEnd,

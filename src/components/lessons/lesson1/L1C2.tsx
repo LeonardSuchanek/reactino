@@ -11,6 +11,8 @@ import {
 import { ToastContainer } from "react-toastify";
 import Button from "../../Button";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Item {
     id: string;
@@ -65,6 +67,49 @@ const onDragEnd = (
             items: destItems,
         },
     });
+};
+
+const handleSubmit = (rows: Rows, setRows: React.Dispatch<React.SetStateAction<Rows>>, items: Item[]) => {
+    const answer = "function ProjectsPage() { return <h1> Hello World </h1> }";
+    const res = rows.Answer.items.map((item) => item.content).join(" ");
+    console.log(res);
+    if (res === answer) {
+        toast.success('Well done! That is the correct answer', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        setRows({
+            Question: {
+                items: items,
+            },
+            Answer: {
+                items: [],
+            },
+        });
+    } else {
+        toast.error('Oops! That is the wrong answer', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        setRows({
+            Question: {
+                items: items,
+            },
+            Answer: {
+                items: [],
+            },
+        });
+    }
 };
 
 const L1C2 = () => {
