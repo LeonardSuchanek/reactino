@@ -151,13 +151,13 @@ const L1C2 = () => {
                         Ziehe dafür die Bauteile in der richtigen Reigenfolge auf die Linie.
                         Zum Prüfen deiner Antwort nutze den Button.
                     </p>
-                    <div className="answer-wrapper mt-10">
+                    <div className="answer-wrapper mt-10 bg-yellow-200 h-14 ">
                         {winReady ? (
                             <Droppable droppableId="Answer" direction="horizontal">
                                 {(provided, snapshot) => {
                                     return (
                                         <div
-                                            className="answers flex gap-2 w-full h-10"
+                                            className="answers flex gap-2 w-full h-auto"
                                             ref={provided.innerRef}
                                             {...provided.droppableProps}
                                         >
@@ -194,7 +194,6 @@ const L1C2 = () => {
                             </Droppable>
                         ) : null}
 
-                        <hr className="border-gray-600" />
                         <br />
                     </div>
                     {winReady ? (
