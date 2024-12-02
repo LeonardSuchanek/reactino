@@ -17,7 +17,6 @@ import "react-toastify/dist/ReactToastify.css";
 interface Item {
     id: string;
     content: string;
-    color: string;
 }
 
 interface Row {
@@ -114,15 +113,16 @@ const handleSubmit = (rows: Rows, setRows: React.Dispatch<React.SetStateAction<R
 
 const L1C2 = () => {
     const items = [
-        { id: uuid(), content: "function", color: "bg-yellow-200" },
-        { id: uuid(), content: "ProjectsPage()", color: "bg-white" },
-        { id: uuid(), content: "{", color: "bg-white" },
-        { id: uuid(), content: "}", color: "bg-white" },
-        { id: uuid(), content: "</h1>", color: "bg-white" },
-        { id: uuid(), content: "<h1>", color: "bg-white" },
-        { id: uuid(), content: "return", color: "bg-white" },
-        { id: uuid(), content: "Hello World", color: "bg-white" },
+        { id: uuid(), content: "function" },
+        { id: uuid(), content: "ProjectsPage()" },
+        { id: uuid(), content: "{" },
+        { id: uuid(), content: "}" },
+        { id: uuid(), content: "</h1>" },
+        { id: uuid(), content: "<h1>" },
+        { id: uuid(), content: "return" },
+        { id: uuid(), content: "Hello World" },
     ];
+
 
     const rowsBackend: Rows = {
         Question: {
@@ -151,7 +151,7 @@ const L1C2 = () => {
                         Ziehe dafür die Bauteile in der richtigen Reigenfolge auf die Linie.
                         Zum Prüfen deiner Antwort nutze den Button.
                     </p>
-                    <div className="answer-wrapper mt-10 bg-yellow-200 h-14 ">
+                    <div className="answer-wrapper mt-10 bg-cyan-100 padding-2 h-12 ">
                         {winReady ? (
                             <Droppable droppableId="Answer" direction="horizontal">
                                 {(provided, snapshot) => {
@@ -174,11 +174,7 @@ const L1C2 = () => {
                                                                     ref={provided.innerRef}
                                                                     {...provided.draggableProps}
                                                                     {...provided.dragHandleProps}
-                                                                    className={`${item.color} p-4 
-                                                                    relative before:absolute before:w-6 before:h-6 before:rounded-full before:bg-white 
-                                                                    before:top-[-12px] before:left-[50%] before:transform before:translate-x-[-50%] 
-                                                                    after:absolute after:w-6 after:h-6 after:rounded-full after:bg-cyan-200 
-                                                                    after:bottom-[-12px] after:left-[50%] after:transform after:translate-x-[-50%]`}
+                                                                    className="border-black border-2 bg-yellow-400 hover:bg-yellow-200 text-xl p-2"
                                                                 >
                                                                     {item.content}
                                                                 </div>

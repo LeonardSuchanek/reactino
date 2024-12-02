@@ -108,7 +108,7 @@ const L1C1 = () => {
       {response && <p className="text-xl md:text-2xl">{response}</p>}
 
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
-        <Link to="/">
+        <Link to="/lesson/1">
           <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
         </Link>
         <Link to="/lesson/1/chapter/2">

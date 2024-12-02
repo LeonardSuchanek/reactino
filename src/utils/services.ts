@@ -5,7 +5,6 @@ import { DropResult } from "react-beautiful-dnd";
 interface Item {
     id: string;
     content: string;
-    color: string;
 }
 
 interface Row {
