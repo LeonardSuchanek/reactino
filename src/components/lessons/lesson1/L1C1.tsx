@@ -105,7 +105,13 @@ const L1C1 = () => {
         className="mb-10"
         color="red"
       />
-      {response && <p className="text-xl md:text-2xl">{response}</p>}
+      <Button
+        onClick={() => { }}
+        buttonText="Abgeben"
+        className="mb-10 ml-4"
+        color="lime"
+      />
+      {response && <p className="italic text-xl mb-10 md:text-2xl">{response}</p>}
 
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
         <Link to="/lesson/1">

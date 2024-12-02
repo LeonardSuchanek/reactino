@@ -57,7 +57,7 @@ const handleSubmit = (rows: Rows, setRows: React.Dispatch<React.SetStateAction<R
     if (res === answer) {
         toast.success('Well done! That is the correct answer', {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: false,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -75,7 +75,7 @@ const handleSubmit = (rows: Rows, setRows: React.Dispatch<React.SetStateAction<R
     } else {
         toast.error('Oops! That is the wrong answer', {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: false,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
