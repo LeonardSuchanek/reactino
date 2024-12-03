@@ -74,8 +74,9 @@ const L1C1 = () => {
 
   return (
     <div className="max-w-7xl md:justify-self-center">
+      <p className="text-xl font-bold md:text-2xl">Aufgabe 1</p>
       <h1 className="font-bold text-4xl md:text-5xl mb-1">
-        Aufgabe 1: {lessons.lesson1.task1.title}
+        {lessons.lesson1.task1.title}
       </h1>
       <p className="text-xl md:text-2xl mb-3">
         {lessons.lesson1.task1.description}
@@ -106,12 +107,14 @@ const L1C1 = () => {
         color="red"
       />
       <Button
-        onClick={() => { }}
+        onClick={() => {}}
         buttonText="Abgeben"
         className="mb-10 ml-4"
         color="lime"
       />
-      {response && <p className="italic text-xl mb-10 md:text-2xl">{response}</p>}
+      {response && (
+        <p className="italic text-xl mb-10 md:text-2xl">{response}</p>
+      )}
 
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
         <Link to="/lesson/1">
