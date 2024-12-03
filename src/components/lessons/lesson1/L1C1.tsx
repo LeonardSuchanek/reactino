@@ -5,15 +5,19 @@ import Button from "../../Button";
 import { fetchChatGPTResponse } from "../../../utils/openai";
 import lessons from "../../../data/lessons.json";
 import { Link } from "react-router-dom";
+import Toast, { ToastType } from "../../Toast";
 
 const L1C1 = () => {
   const [input, setinput] = useState<string>("import React from 'react';");
 
   const solution = lessons.lesson1.task1.solution;
 
-  const [response, setResponse] = useState("");
-
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
+
+  const [toast, setToast] = useState<{
+    message: string;
+    type: ToastType;
+  } | null>(null);
 
   const handleEditorDidMount = (
     editor: monaco.editor.IStandaloneCodeEditor
@@ -35,11 +39,17 @@ const L1C1 = () => {
         { role: "user", content: editorRef.current?.getValue() || "" },
       ];
       const chatResponse = await fetchChatGPTResponse(messages);
-      setResponse(chatResponse);
+      setToast({
+        message: chatResponse,
+        type: "success",
+      });
       console.log(chatResponse);
     } catch (error) {
+      setToast({
+        message: "Es gab ein Problem mit der API.",
+        type: "success",
+      });
       console.error(error);
-      setResponse("Es gab ein Problem mit der API.");
     }
   };
 
@@ -83,9 +93,8 @@ const L1C1 = () => {
         className="mb-10 ml-4"
         color="lime"
       />
-      {response && (
-        <p className="italic text-xl mb-10 md:text-2xl">{response}</p>
-      )}
+
+      {toast && <Toast message={toast.message} type={toast.type} />}
 
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
         <Link to="/lesson/1">

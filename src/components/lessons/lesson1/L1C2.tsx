@@ -124,6 +124,8 @@ const L1C2 = () => {
     <main className="max-w-7xl md:justify-self-center">
       <DragDropContext onDragEnd={(result) => onDragEnd(result, rows, setRows)}>
         <div>
+          <p className="text-xl font-bold md:text-2xl">Aufgabe 2</p>
+
           <h1 className="font-bold text-4xl md:text-5xl mb-1">
             Bringe die Bauteile einer Komponente in die richtige Reihenfolge.
           </h1>
