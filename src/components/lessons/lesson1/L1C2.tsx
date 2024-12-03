@@ -45,10 +45,10 @@ const L1C2 = () => {
 
   const [rows, setRows] = useState(rowsBackend);
 
-  const [toast, setToast] = useState<{ message: string; type: ToastType }>({
-    message: "Super! Das ist die richtige Antwort",
-    type: "success",
-  });
+  const [toast, setToast] = useState<{
+    message: string;
+    type: ToastType;
+  } | null>(null);
 
   const [winReady, setwinReady] = useState(false);
   useEffect(() => {
@@ -101,37 +101,24 @@ const L1C2 = () => {
     rows: Rows,
     setRows: React.Dispatch<React.SetStateAction<Rows>>,
     items: Item[],
-    setToast: React.Dispatch<{ message: string; type: ToastType }>
+    setToast: React.Dispatch<{ message: string; type: ToastType } | null>
   ) => {
     const answer = "function ProjectsPage() { return <h1> Hello World </h1> }";
     const res = rows.Answer.items.map((item) => item.content).join(" ");
     console.log(res);
     if (res === answer) {
-      setRows({
-        Question: {
-          items: items,
-        },
-        Answer: {
-          items: [],
-        },
-      });
       setToast({
-        message: "Super! Das ist die richtige Antwort",
+        message: "Super! Das ist die richtige Antwort.",
         type: "success",
       });
     } else {
-      setRows({
-        Question: {
-          items: items,
-        },
-        Answer: {
-          items: [],
-        },
-      });
       setToast({
         message: "Falsch, du Idiot!",
         type: "error",
       });
+
+      // Reset toast after 3 seconds
+      setTimeout(() => setToast(null), 3000);
     }
   };
 
@@ -225,7 +212,7 @@ const L1C2 = () => {
           </div>
         </div>
       </DragDropContext>
-      <Toast message={toast.message} type={toast.type} />
+      {toast && <Toast message={toast.message} type={toast.type} />}
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
         <Link to="/">
           <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
