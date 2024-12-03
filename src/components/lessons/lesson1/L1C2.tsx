@@ -99,7 +99,6 @@ const L1C2 = () => {
 
   const handleSubmit = (
     rows: Rows,
-    setRows: React.Dispatch<React.SetStateAction<Rows>>,
     items: Item[],
     setToast: React.Dispatch<{ message: string; type: ToastType } | null>
   ) => {
@@ -113,13 +112,12 @@ const L1C2 = () => {
       });
     } else {
       setToast({
-        message: "Falsch, du Idiot!",
+        message: "Falsch, denke nochmal scharf nach!",
         type: "error",
       });
-
-      // Reset toast after 3 seconds
-      setTimeout(() => setToast(null), 3000);
     }
+
+    setTimeout(() => setToast(null), 5000);
   };
 
   return (
@@ -205,7 +203,7 @@ const L1C2 = () => {
 
           <div className="mt-10 mb-10 md:mt-5">
             <Button
-              onClick={() => handleSubmit(rows, setRows, items, setToast)}
+              onClick={() => handleSubmit(rows, items, setToast)}
               color="red"
               buttonText="Prüfe dein Antwort"
             />

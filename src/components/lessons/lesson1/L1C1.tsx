@@ -43,35 +43,6 @@ const L1C1 = () => {
     }
   };
 
-  const addMarkers = () => {
-    if (editorRef.current) {
-      const model = editorRef.current.getModel();
-      if (model) {
-        const markers: monaco.editor.IMarkerData[] = [
-          {
-            startLineNumber: 3,
-            startColumn: 1,
-            endLineNumber: 3,
-            endColumn: 10,
-            message: "This is a custom marker",
-            severity: monaco.MarkerSeverity.Warning,
-          },
-        ];
-        monaco.editor.setModelMarkers(model, "owner", markers);
-        console.log(monaco.editor.getModelMarkers({}));
-      }
-    }
-  };
-
-  const onButtonClicked = () => {
-    // TODO: mit KI prüfen, ob der Code korrekt ist
-    if (editorRef.current) {
-      handleSend();
-    } else {
-      alert("Editor is not loaded yet.");
-    }
-  };
-
   return (
     <div className="max-w-7xl md:justify-self-center">
       <p className="text-xl font-bold md:text-2xl">Aufgabe 1</p>
@@ -101,7 +72,7 @@ const L1C1 = () => {
         />
       </div>
       <Button
-        onClick={onButtonClicked}
+        onClick={handleSend}
         buttonText="Prüfen"
         className="mb-10"
         color="red"
