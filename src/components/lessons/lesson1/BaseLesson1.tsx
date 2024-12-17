@@ -9,7 +9,46 @@ const Lesson1 = () => {
         Einführung in React-Komponenten
       </h1>
 
+      {/* Projekt mit npm erstellen */}
+      <section className="mb-8">
+        <h2 className="text-3xl mt-14 font-semibold mb-2">
+          Ein neues React-Projekt mit npm erstellen
+        </h2>
+
+        <p className="text-xl md:text-2xl mb-2">
+          Um ein neues React-Projekt zu erstellen, benutze das Tool
+          create-react-app. Stelle sicher, dass Node.js und npm installiert
+          sind.
+        </p>
+        <p className="text-xl md:text-2xl mb-2">
+          Der Befehl <code>npx create-react-app mein-react-projekt</code>
+          erstellt automatisch die Ordnerstruktur und alle notwendigen Dateien.
+        </p>
+        <h2 className="text-2xl mt-14 font-semibold mb-2">
+          Überprüfen, ob Node.js und npm installiert sind
+        </h2>
+        <CodeBox
+          code={`node -v
+npm -v`}
+        />
+        <h2 className="text-2xl mt-14 font-semibold mb-2">
+          Ein neues React-Projekt erstellen
+        </h2>
+        <CodeBox code={`npx create-react-app mein-react-projekt`} />
+        <h2 className="text-2xl mt-14 font-semibold mb-2">
+          In das Projektverzeichnis wechseln
+        </h2>
+        <CodeBox code={`cd mein-react-projekt`} />
+        <h2 className="text-2xl mt-14 font-semibold mb-2">
+          Das Projekt starten
+        </h2>
+        <CodeBox code={`npm start`} />
+      </section>
+
       {/* Einleitung */}
+      <h2 className="text-3xl mt-14 font-semibold mb-2">
+        Komponentenbasiertes Entwickeln
+      </h2>
       <section className="mb-8 text-xl md:text-2xl">
         Components (Komponenten) erlauben es uns, das UI in unabhängige,
         wiederverwendbare Teile zu unterteilen. Jeder Teil kann isoliert
