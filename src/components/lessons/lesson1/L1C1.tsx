@@ -8,9 +8,7 @@ import { Link } from "react-router-dom";
 import Toast, { ToastType } from "../../Toast";
 
 const L1C1 = () => {
-  const [input, setinput] = useState<string>("import React from 'react';");
-
-  const solution = lessons.lesson1.task1.solution;
+  const [input, setinput] = useState<string>(lessons.lesson1.task1.default);
 
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
@@ -29,12 +27,21 @@ const L1C1 = () => {
     console.log("Sending code to OpenAI");
 
     try {
-      console.log(input, solution);
+      console.log(input, lessons.lesson1.task1.solution);
 
       const messages = [
         {
           role: "system",
-          content: `Prüfe, ob die Eingabe des Benutzers der Lösung entspricht. Der Benutzer hat bisher keine Erfahrung mit React. Gib dabei nicht die Lösung, sondern nur Tipps, wie der Benutzer selbst auf die Lösung kommen kann. Die Lösung lautet: ${solution}`,
+          content:
+            "Prüfe und bewerte die Eingabe des Benutzers. Der Benutzer hat bisher keine Erfahrung mit React. Gib dabei nicht die Lösung, sondern nur Tipps, wie der Benutzer selbst auf die Lösung kommen kann. Ein Teil der Antwort bekommt der Benutzer bereits vorgegeben, das wurde vom Benutzer nicht eingeben, ignoriere diesen Teil bei deiner Bewertung. Antworte nicht auf andere Inhalte als die Überprüfung der Eingabe.",
+        },
+        {
+          role: "system",
+          content: `Die Lösung lautet: ${lessons.lesson1.task1.solution}`,
+        },
+        {
+          role: "system",
+          content: `Bereits vorgegener Code: ${lessons.lesson1.task1.default}`,
         },
         { role: "user", content: editorRef.current?.getValue() || "" },
       ];
