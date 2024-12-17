@@ -1,6 +1,7 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CardThumbnail from "../assets/neo-brutalism-image2.jpg";
+import Bild1 from "../assets/1.jpg";
 import PromotionImage from "../assets/neo-brutalism-image3.jpg";
 import PromotionImageMobile from "../assets/neo-brutalism-image3-mobile.jpg";
 import Card from "../components/Card";
@@ -22,7 +23,7 @@ const Home = () => {
   const cards = [
     <Card
       key="1"
-      thumbnail={CardThumbnail}
+      thumbnail={Bild1}
       subtitle="Lektion 1"
       title="Einführung in React und Komponenten"
       description="Visit the Getting Started page and learn about its features."
