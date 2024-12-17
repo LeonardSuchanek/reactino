@@ -1,89 +1,130 @@
-import Checkbox from "../../Checkbox";
+import { Link } from "react-router-dom";
+import CodeBox from "../../CodeBox";
+import Button from "../../Button";
 
-const Lesson1 = () => {
+const Lesson2 = () => {
   return (
-    <div className="">
-      <h1 className="font-bold capitalize text-4xl mb-12"> Lektion 2</h1>
-      <section className="mb-12">
-        <h2 className="text-2xl mb-6">
-          Beschreibungstext für Lektion 1. Zuerst Theorie und dann eine Übung.
-        </h2>
-        <div className="mb-8">
-          <div className="mb-4 leading-relaxed flex">
-            <Checkbox />
-            <p className="ml-2 -mt-1.5 align-top">
-              <strong>Dazzling Eye-Catching Design:</strong> Ignite your website
-              with a burst of vibrant colors and bold shapes. This library
-              offers a mesmerizing range of attention-grabbing elements that
-              will make your webpages truly stand out from the crowd.
-            </p>
-          </div>
-          <div className="mb-4 leading-relaxed flex">
-            <Checkbox />
-            <p className="ml-2 -mt-1.5 align-top">
-              <strong>Powered by Tailwind CSS:</strong> Harness the power of
-              Tailwind CSS, the industry-leading framework for rapid UI
-              development. Seamlessly integrate Neo-Brutalism components with
-              your project and enjoy the flexibility and efficiency it brings.
-              <p>
-                <strong>Note:</strong> This library is intended to be used with
-                Tailwind CSS. If you haven't installed it yet, please refer to{" "}
-                <a
-                  href="https://tailwindcss.com/docs/installation"
-                  target="_blank"
-                  className="underline font-bold"
-                >
-                  the installation instructions
-                </a>
-                .
-              </p>
-            </p>
-          </div>
-          <div className="leading-relaxed flex">
-            <Checkbox />
-            <p className="ml-2  -mt-1.5 align-top">
-              <strong>Completely Free:</strong> Yes, you read that right!
-              Neo-Brutalism UI library is absolutely free. Enhance your webpages
-              with stunning designs without spending a dime. Unlock your
-              creativity and create impactful websites without breaking your
-              budget.
-            </p>
-          </div>
-        </div>
-        <div className="mb-4 leading-relaxed">
-          <p className="leading-relaxed">
-            Get started today and experience the seamless fusion of captivating
-            design, Tailwind CSS, ease of use, and affordability – all in one
-            incredible package. Don't miss out on this opportunity to elevate
-            your web design game.
-          </p>
-        </div>
-        <div className="mb-16 leading-relaxed">
-          <p className="leading-relaxed">
-            <strong>Note:</strong> If you are a React user, I highly recommend
-            cloning{" "}
-            <a
-              href="https://github.com/marieooq/neo-brutalism-ui-library"
-              target="_blank"
-              className="underline font-bold "
-            >
-              the GitHub repository
-            </a>{" "}
-            and running Storybook. The instructions for how it works are
-            described in{" "}
-            <a
-              href="https://github.com/marieooq/neo-brutalism-ui-library"
-              target="_blank"
-              className="underline font-bold "
-            >
-              the README file
-            </a>
-            .
-          </p>
-        </div>
+    <div className="max-w-7xl md:justify-self-center">
+      <h1 className="font-bold text-4xl md:text-5xl mb-12">
+        Props und States in React
+      </h1>
+
+      {/* Einleitung */}
+      <section className="mb-8 text-xl md:text-2xl">
+        Props (Eigenschaften) und States (Zustände) sind zwei wichtige Konzepte
+        in React, um Daten innerhalb von Komponenten zu verwalten und
+        weiterzugeben.
       </section>
+
+      {/* Props erklären */}
+      <section className="mb-8">
+        <h2 className="text-3xl mt-14 font-semibold mb-2">Was sind Props?</h2>
+        <p className="text-xl md:text-2xl mb-2">
+          Props sind Eigenschaften, die von einer übergeordneten Komponente an
+          eine untergeordnete Komponente weitergegeben werden. Sie sind
+          unveränderlich (read-only).
+        </p>
+        <CodeBox
+          code={`function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Welcome name="Alice" />);`}
+        />
+        <p className="text-xl md:text-2xl mb-2">
+          Im obigen Beispiel wird der Wert <code>name</code> als Prop an die{" "}
+          <code>Welcome</code>-Komponente weitergegeben und in der UI angezeigt.
+        </p>
+      </section>
+
+      {/* States erklären */}
+      <section className="mb-8">
+        <h2 className="text-3xl mt-14 font-semibold mb-2">Was sind States?</h2>
+        <p className="text-xl md:text-2xl mb-2">
+          States sind dynamische Daten, die innerhalb einer Komponente verwaltet
+          werden. Sie können über die <code>useState</code>-Hook geändert
+          werden.
+        </p>
+        <CodeBox
+          code={`import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Counter />);`}
+        />
+        <p className="text-xl md:text-2xl mb-2">
+          In diesem Beispiel wird der State <code>count</code> bei jedem Klick
+          auf den Button aktualisiert.
+        </p>
+      </section>
+
+      {/* Props vs. States */}
+      <section className="mb-8">
+        <h2 className="text-3xl mt-14 font-semibold mb-2">Props vs. States</h2>
+        <p className="text-xl md:text-2xl mb-2">
+          Der Unterschied zwischen Props und States:
+        </p>
+        <ul className="list-disc pl-8 text-xl md:text-2xl">
+          <li>
+            Props werden von der Elternkomponente übergeben und sind
+            unveränderlich.
+          </li>
+          <li>
+            States werden innerhalb der Komponente definiert und können geändert
+            werden.
+          </li>
+        </ul>
+      </section>
+
+      {/* Zusammenspiel von Props und States */}
+      <section className="mb-8">
+        <h2 className="text-3xl mt-14 font-semibold mb-2">
+          Zusammenspiel von Props und States
+        </h2>
+        <p className="text-xl md:text-2xl mb-2">
+          Props und States können zusammen verwendet werden, um dynamische und
+          wiederverwendbare Komponenten zu erstellen.
+        </p>
+        <CodeBox
+          code={`import { useState } from 'react';
+
+function Greeting(props) {
+  const [greet, setGreet] = useState('Hello');
+
+  return (
+    <div>
+      <p>{greet}, {props.name}!</p>
+      <button onClick={() => setGreet('Hi')}>Say Hi</button>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Greeting name="Bob" />);`}
+        />
+      </section>
+
+      <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
+        <Link to="/">
+          <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
+        </Link>
+        <Link to="chapter/3">
+          <Button buttonText="Nächste Lektion →" className="" color="red" />
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default Lesson1;
+export default Lesson2;
