@@ -15,7 +15,7 @@ const Header = () => {
     <header className="bg-white h-20 w-full fixed top-0 z-40">
       <div className="w-full h-full m-auto flex justify-between items-center px-5 md:px-24">
         <Link to="/" className="text-2xl font-bold font-mono">
-          <div className="bg-black p-2">
+          <div className="bg-red-400 p-2 shadow-[8px_8px_0px_rgba(0,0,0,1)]">
             <a className="text-white font-mono p-2">Reactino</a>
           </div>
         </Link>
