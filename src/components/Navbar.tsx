@@ -10,7 +10,7 @@ const Navbar = ({ navItems }: { navItems: navObject[] }) => {
   return (
     <div className="hidden md:block bg-violet-300 fixed left-0 w-[360px] h-screen overflow-y-scroll p-24 pt-8">
       <Link to="/" className="text-2xl font-bold font-mono">
-        <div className="bg-black inline">
+        <div className="bg-black p-2 inline">
           <a className="text-violet-300 font-mono p-2">Reactino</a>
         </div>
       </Link >
