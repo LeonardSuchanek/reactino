@@ -217,8 +217,8 @@ const L1C2 = () => {
         <Link to="/">
           <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
         </Link>
-        <Link to="/lesson/1/chapter/2">
-          <Button buttonText="Aufgabe 2 →" className="" color="red" />
+        <Link to="/lesson/2">
+          <Button buttonText="Nächste Lektion →" className="" color="red" />
         </Link>
       </div>
     </main>

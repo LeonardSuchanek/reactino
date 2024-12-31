@@ -1,13 +1,42 @@
 {
-    "navItemsLesson1": [
-      { "name": "Lektion 1", "linkTo": "/lesson/1" },
-      { "name": "Aufgabe 1", "linkTo": "/lesson/1/chapter/1" },
-      { "name": "Aufgabe 2", "linkTo": "/lesson/1/chapter/2" }
-    ],
-    "navItemsLesson2": [
-      { "name": "Lektion 2", "linkTo": "/lesson/2" },
-      { "name": "Aufgabe 1", "linkTo": "/lesson/2/chapter/1" },
-      { "name": "Aufgabe 2", "linkTo": "/lesson/2/chapter/2" }
-    ]
-  }
-  
+  "navItemsLesson0": [
+    {
+      "name": "Einrichtung",
+      "linkTo": "/lesson/0"
+    }
+  ],
+  "navItemsLesson1": [
+    {
+      "name": "Lektion 1",
+      "linkTo": "/lesson/1"
+    },
+    {
+      "name": "Aufgabe 1",
+      "linkTo": "/lesson/1/chapter/1"
+    },
+    {
+      "name": "Aufgabe 2",
+      "linkTo": "/lesson/1/chapter/2"
+    }
+  ],
+  "navItemsLesson2": [
+    {
+      "name": "Lektion 2",
+      "linkTo": "/lesson/2"
+    },
+    {
+      "name": "Aufgabe 1",
+      "linkTo": "/lesson/2/chapter/1"
+    },
+    {
+      "name": "Aufgabe 2",
+      "linkTo": "/lesson/2/chapter/2"
+    }
+  ],
+  "navItemsLesson3": [
+    {
+      "name": "Lektion 3",
+      "linkTo": "/lesson/3"
+    }
+  ]
+}

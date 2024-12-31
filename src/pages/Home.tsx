@@ -2,6 +2,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CardThumbnail from "../assets/neo-brutalism-image2.jpg";
 import Bild1 from "../assets/1.jpg";
+import ComingSoon from "../assets/coming_soon.jpg";
 import PromotionImage from "../assets/neo-brutalism-image3.jpg";
 import PromotionImageMobile from "../assets/neo-brutalism-image3-mobile.jpg";
 import Card from "../components/Card";
@@ -23,48 +24,48 @@ const Home = () => {
   const cards = [
     <Card
       key="1"
-      thumbnail={Bild1}
-      subtitle="Lektion 1"
-      title="Einführung in React und Komponenten"
-      description="Visit the Getting Started page and learn about its features."
-      callToActionText="Jetzt lernen →"
-      calllToActionLink="/lesson/1"
+      thumbnail={CardThumbnail}
+      subtitle="Einrichtung"
+      title="Installieren der Entwicklungsumgebung"
+      description="Erfahren Sie, wie Sie React auf Ihrem Computer einrichten und Ihre erste App starten."
+      callToActionText="Jetzt einrichten →"
+      calllToActionLink="/lesson/0"
     />,
     <Card
       key="2"
       thumbnail={CardThumbnail}
-      subtitle="Lektion 2"
-      title="Props und State"
-      description="Let's take a look at what components are available."
+      subtitle="Lektion 1"
+      title="Einführung in React und Komponenten"
+      description="Lernen Sie die Grundlagen von React und wie Sie Ihre erste Komponente erstellen."
       callToActionText="Jetzt lernen →"
-      calllToActionLink="/lesson/2"
+      calllToActionLink="/lesson/1"
     />,
     <Card
       key="3"
       thumbnail={CardThumbnail}
-      subtitle="Lektion 3"
-      title="Ereignisse und Bedingtes Rendern"
-      description="Get ready for an in-depth exploration of the components."
+      subtitle="Lektion 2"
+      title="Props und State"
+      description="Entdecken Sie, wie Daten in React-Komponenten verwaltet und weitergegeben werden."
       callToActionText="Jetzt lernen →"
-      calllToActionLink="/"
+      calllToActionLink="/lesson/2"
     />,
     <Card
       key="4"
       thumbnail={CardThumbnail}
-      subtitle="Lektion 4"
-      title="Thema der Lektion"
-      description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      subtitle="Lektion 3"
+      title="Ereignisse und Bedingtes Rendern"
+      description="Lernen Sie, wie Sie Benutzerinteraktionen verarbeiten und dynamische Inhalte anzeigen."
       callToActionText="Jetzt lernen →"
-      calllToActionLink="/"
+      calllToActionLink="/lesson/3"
     />,
     <Card
       key="5"
-      thumbnail={CardThumbnail}
+      thumbnail={ComingSoon}
       subtitle="Lektion 5"
-      title="Thema der Lektion"
-      description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
-      callToActionText="Jetzt lernen →"
-      calllToActionLink="/"
+      title="Coming Soon"
+      description="Neue spannende Lektionen sind in Arbeit. Schauen doch bald wieder vorbei!"
+      callToActionText=""
+      calllToActionLink=""
     />,
   ];
 
