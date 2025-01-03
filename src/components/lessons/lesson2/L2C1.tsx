@@ -1,4 +1,6 @@
 import Quiz from 'react-quiz-component'
+//https://github.com/wingkwong/react-quiz-component
+
 
 export const aufgabe = {
   "quizSynopsis": "Testen Sie Ihr Wissen über die Grundlagen von Props und State in React. Viel Erfolg!",
