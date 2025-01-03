@@ -23,7 +23,7 @@ const Header = () => {
           <ul className="flex justify-end items-center space-x-4">
             <li>
               <Link to="/lesson/1">
-                <Button color={"red"} buttonText="Jetzt starten" />
+                <Button color={"lime"} buttonText="Jetzt starten" />
               </Link>
             </li>
           </ul>

@@ -26,7 +26,7 @@ const Home = () => {
       key="1"
       thumbnail={CardThumbnail}
       subtitle="Einrichtung"
-      title="Installieren der Entwicklungsumgebung"
+      title="React einrichten und starten"
       description="Erfahren Sie, wie Sie React auf Ihrem Computer einrichten und Ihre erste App starten."
       callToActionText="Jetzt einrichten →"
       calllToActionLink="/lesson/0"
@@ -125,10 +125,7 @@ const Home = () => {
             <div className="relative flex justify-center items-center">
               <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
                 {cards.map((card, index) => (
-                  <div
-                    key={index}
-                    className="w-full flex-shrink-0 p-4"
-                  >
+                  <div key={index} className="w-full flex-shrink-0 p-4">
                     {card}
                   </div>
                 ))}
