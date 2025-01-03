@@ -7,7 +7,7 @@
   ],
   "navItemsLesson1": [
     {
-      "name": "Lektion 1",
+      "name": "Einführung in Komponenten",
       "linkTo": "/lesson/1"
     },
     {
@@ -21,7 +21,7 @@
   ],
   "navItemsLesson2": [
     {
-      "name": "Lektion 2",
+      "name": "Props und States",
       "linkTo": "/lesson/2"
     },
     {
@@ -35,7 +35,7 @@
   ],
   "navItemsLesson3": [
     {
-      "name": "Lektion 3",
+      "name": "Ereignisse und bedingtes Rendern",
       "linkTo": "/lesson/3"
     }
   ]

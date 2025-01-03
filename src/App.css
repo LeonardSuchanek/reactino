@@ -1,0 +1,283 @@
+.react-quiz-container {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 0px !important;
+    max-width: 100% !important;
+    width: 1000px !important;
+    font-size: 24px;
+    color: #000;
+}
+
+.react-quiz-container .startQuizWrapper {
+    margin-top: 10px;
+}
+
+.react-quiz-container .btn {
+    background-color: #FFF59F;
+    border-color: #000000 !important;
+    border-width: 2px !important;
+    border-radius: 0px !important;
+    height: 3rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 0px !important;
+}
+
+.react-quiz-container .btn:hover {
+    background-color: #FFE500 !important;
+    /* hover:bg-violet-300 */
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 1) !important;
+    /* hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] */
+}
+
+.react-quiz-container .questionWrapper .btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 0px !important;
+    border: 1px solid #ffffff;
+    font-size: 15px;
+    display: block;
+    white-space: normal;
+    text-align: unset;
+}
+
+.react-quiz-container .questionWrapper .btn.correct {
+    background: #9dfc7c;
+    color: white;
+}
+
+.timerBtn {
+    background: green;
+    border: 0 !important;
+    width: 80px;
+    color: #fff;
+    padding: 5px;
+    top: -35px;
+    border-radius: 0px !important;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.timerPauseScreen {
+    font-size: 30px;
+}
+
+
+.react-quiz-container .questionModal .alert {
+    padding: 20px;
+    margin-bottom: 21px;
+    border: 1px solid transparent;
+    border-radius: 0px !important;
+    color: #fff;
+}
+
+.react-quiz-container .correct {
+    background-color: #7df752 !important;
+    color: black !important;
+}
+
+.react-quiz-container .incorrect {
+    background-color: #fa7a7a !important;
+    color: white;
+}
+
+.react-quiz-container .unanswered {
+    background-color: #A6FAFF !important;
+    color: white;
+}
+
+.react-quiz-container .questionWrapper img {
+    width: 100%;
+}
+
+.react-quiz-container .answerBtn {
+    width: 100%;
+}
+
+.react-quiz-container .selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.react-quiz-container .startQuizWrapper .startQuizBtn {
+    font-size: 15px;
+    border-radius: 0px !important;
+    line-height: 1.35135;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fa7a7a !important;
+    border: 1px solid #d9d9d9;
+}
+
+.react-quiz-container .result-answer-wrapper {
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 0px !important;
+}
+
+.react-quiz-container .result-answer-wrapper h3 {
+    background-color: #fafafa;
+    opacity: 0.8;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 0px;
+    padding: 10px;
+    border-radius: 0px !important;
+    font-weight: bold !important;
+}
+
+.react-quiz-container .result-answer-wrapper .explanation {
+    padding: 20px;
+    margin: 0px 20px 20px 20px;
+    border: 1px solid #e8e8e8;
+}
+
+.react-quiz-container .result-answer-wrapper .tag-container {
+    margin: 20px;
+}
+
+.react-quiz-container .result-answer {
+    padding: 0px 20px;
+}
+
+.react-quiz-container .quiz-synopsis {
+    margin: 15px 0px;
+    font-weight: bold;
+}
+
+.react-quiz-container .tag-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 16px !important;
+}
+
+.react-quiz-container .selection-tag,
+.react-quiz-container .number-of-selection {
+    padding: 7px;
+    border-radius: 0px !important;
+    color: #000 !important
+}
+
+.react-quiz-container .number-of-selection {
+    background: #53f2fc !important;
+    margin-left: 5px;
+}
+
+.react-quiz-container .selection-tag.single {
+    background: #53f2fc !important;
+}
+
+.react-quiz-container .selection-tag.multiple {
+    background: #53f2fc !important;
+}
+
+.react-quiz-container .selection-tag.segment {
+    background: #53f2fc !important;
+    margin-left: 5px;
+}
+
+.react-quiz-container .questionBtnContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.react-quiz-container .quiz-result-filter {
+    position: relative;
+    width: 120px;
+    bottom: 15px;
+
+    .filter-dropdown-select {
+        hidden: 0;
+        padding: 8px;
+        margin-top: 2px;
+        text-transform: capitalize;
+        border: 2px solid #c2c5c7;
+        border-radius: 0px !important;
+        background-color: #fcfcfc;
+        color: #333;
+        font-size: 16px;
+        cursor: pointer;
+        bottom: 10px;
+        position: relative;
+        height: 12px;
+    }
+
+    .filter-dropdown-select:after {
+        transition: all 0.3s ease;
+        content: "▼";
+        position: absolute;
+        top: 57%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #a5a5a5;
+        font-size: 11px;
+    }
+
+    .filter-dropdown-select:hover {
+        border: 2px solid #51aae6;
+        box-shadow: 0 0 6px rgba(109, 179, 250, 0.5);
+    }
+
+    .dropdown-options {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 85%;
+        z-index: 1;
+        left: 0;
+        width: 100%;
+        background-color: #fcfcfc;
+        box-shadow: 0 0 10px rgba(141, 143, 145, 0.5);
+        border-radius: 0px !important;
+    }
+
+    .filter-dropdown-select.open {
+        border: 2px solid #51aae6;
+        box-shadow: 0 0 6px rgba(109, 179, 250, 0.5);
+    }
+
+    .dropdown-options .dropdown-options-item {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .dropdown-options .dropdown-options-item:hover {
+        background-color: #FFE500 !important;
+        border-radius: 0px !important;
+    }
+
+    .dropdown-options .dropdown-options-item:focus {
+        background-color: #ffffff;
+        font-weight: bold;
+    }
+
+    .filter-dropdown-select .selected-option.selected-open {
+        color: #c6c2c2;
+        font-weight: lighter;
+    }
+
+    .filter-dropdown-select .selected-option {
+        font-size: 16px;
+        position: relative;
+        bottom: 2px;
+    }
+
+    .filter-dropdown-select:focus+.dropdown-options {
+        max-height: 200px;
+    }
+
+    .dropdown-options .dropdown-options-item.selected {
+        background-color: #d7f1f9;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .dropdown-options.open {
+        max-height: 200px;
+    }
+}
