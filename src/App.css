@@ -1,6 +1,6 @@
 .react-quiz-container {
-    border: 2px solid black;
     padding: 20px;
+    padding-left: 0px !important;
     margin: 0px !important;
     max-width: 100% !important;
     width: 1000px !important;
@@ -68,13 +68,14 @@
 .react-quiz-container .questionModal .alert {
     padding: 20px;
     margin-bottom: 21px;
-    border: 1px solid transparent;
+    border: 2px solid black !important;
     border-radius: 0px !important;
     color: #fff;
+    font-size: 18px !important;
 }
 
 .react-quiz-container .correct {
-    background-color: #7df752 !important;
+    background-color: #9dfc7c !important;
     color: black !important;
 }
 
@@ -190,7 +191,6 @@
     bottom: 15px;
 
     .filter-dropdown-select {
-        hidden: 0;
         padding: 8px;
         margin-top: 2px;
         text-transform: capitalize;

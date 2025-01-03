@@ -7,61 +7,83 @@ import { Link } from "react-router-dom";
 
 export const aufgabe = {
   quizSynopsis:
-    "Testen Sie Ihr Wissen über die Grundlagen von Props und State in React. Viel Erfolg!",
+    "Testen Sie Ihr Wissen über Ereignisse und bedingtes Rendern in React. Viel Erfolg!",
   progressBarColor: "#9de1f6",
-  nrOfQuestions: "3",
+  nrOfQuestions: "4",
+  timer: 120,
   questions: [
     {
-      question:
-        "Was ist der Hauptunterschied zwischen Props und State in React?",
+      question: "Wie wird ein Ereignis in React normalerweise behandelt?",
       questionType: "text",
       answerSelectionType: "single",
       answers: [
-        "Props können verändert werden, State nicht.",
-        "State kann verändert werden, Props nicht.",
-        "Es gibt keinen Unterschied.",
-        "Beides wird nur für Dateninitialisierung verwendet.",
+        "Durch Hinzufügen eines Attributs wie `onEvent` direkt im DOM.",
+        "Durch Inline-JavaScript-Funktionen im HTML.",
+        "Durch Props wie `onClick` oder `onChange`.",
+        "Durch Verwenden von `addEventListener` in einer React-Komponente."
+      ],
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
+      messageForIncorrectAnswer:
+        "Falsche Antwort. Bitte versuchen Sie es erneut.",
+      explanation:
+        "Ereignisse in React werden über Props wie `onClick` oder `onChange` gehandhabt, die mit einer Funktion verbunden sind.",
+      point: "20",
+    },
+    {
+      question: "Wie können Sie ein bedingtes Rendern in React umsetzen?",
+      questionType: "text",
+      answerSelectionType: "single",
+      answers: [
+        "Durch Verwendung von `if`-Anweisungen direkt im JSX.",
+        "Durch Verwendung eines ternären Operators in JSX.",
+        "Durch Verwendung eines externen Bedingungsschalters.",
+        "Es ist nicht möglich, bedingtes Rendern in React zu implementieren."
       ],
       correctAnswer: "2",
       messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
       messageForIncorrectAnswer:
         "Falsche Antwort. Bitte versuchen Sie es erneut.",
       explanation:
-        "Props sind unveränderlich (read-only), während State intern geändert werden kann.",
+        "Bedingtes Rendern in React erfolgt oft über den ternären Operator (`condition ? <Component1 /> : <Component2 />`) im JSX.",
       point: "20",
     },
     {
-      question: "Wie können Props an eine React-Komponente übergeben werden?",
+      question: "Welche der folgenden Aussagen ist korrekt für Ereignisse in React?",
       questionType: "text",
       answerSelectionType: "single",
       answers: [
-        "Als ein Argument in der `render()` Methode.",
-        "Als ein Attribut in JSX.",
-        "Durch Verwendung von `this.props`.",
-        "Durch den Import von `Props` aus React.",
+        "Ereignisse in React verwenden Standard-HTML-Ereignisnamen.",
+        "Ereignis-Handler in React werden als Strings angegeben.",
+        "Ereignisse in React verwenden camelCase und sind Funktionen.",
+        "React unterstützt keine Ereignisbehandlung."
+      ],
+      correctAnswer: "3",
+      messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
+      messageForIncorrectAnswer:
+        "Falsche Antwort. Bitte versuchen Sie es erneut.",
+      explanation:
+        "React verwendet camelCase für Ereignisnamen (z. B. `onClick`) und die Ereignis-Handler sind JavaScript-Funktionen.",
+      point: "20",
+    },
+    {
+      question: "Wie können Sie die Standardaktion eines Ereignisses in React verhindern?",
+      questionType: "text",
+      answerSelectionType: "single",
+      answers: [
+        "Durch Hinzufügen von `return false` in der Funktion.",
+        "Durch Verwenden von `event.preventDefault()` in der Ereignisfunktion.",
+        "Durch Hinzufügen eines `onAbort` Props.",
+        "Die Standardaktion kann in React nicht verhindert werden."
       ],
       correctAnswer: "2",
       messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
       messageForIncorrectAnswer:
         "Falsche Antwort. Bitte versuchen Sie es erneut.",
       explanation:
-        "Props werden an Komponenten über JSX-Attribute übergeben, z. B. `<Component propName={value} />`.",
+        "Um die Standardaktion eines Ereignisses zu verhindern, verwenden Sie `event.preventDefault()` in der Ereignisfunktion.",
       point: "20",
-    },
-    {
-      question:
-        "Welches Hook wird verwendet, um den State in einer funktionalen Komponente zu verwalten?",
-      questionType: "text",
-      answerSelectionType: "single",
-      answers: ["useProps", "useState", "useEffect", "useReducer"],
-      correctAnswer: "2",
-      messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
-      messageForIncorrectAnswer:
-        "Falsche Antwort. Bitte versuchen Sie es erneut.",
-      explanation:
-        "`useState` ist ein React-Hook, der für die Verwaltung von lokalem State in funktionalen Komponenten verwendet wird.",
-      point: "20",
-    },
+    }
   ],
   "appLocale": {
     "landingHeaderText": "<questionLength> Fragen",
@@ -87,7 +109,7 @@ export const aufgabe = {
   }
 };
 
-const L2C1 = () => {
+const L3C1 = () => {
   const [toast, setToast] = useState<{
     message: string;
     type: ToastType;
@@ -112,8 +134,9 @@ const L2C1 = () => {
   return (
     <main className="max-w-7xl md:justify-self-center">
       <div>
+        <p className="text-xl font-bold md:text-2xl">Aufgabe 1</p>
         <h1 className="font-bold text-4xl md:text-5xl mb-1">
-          Quiz 1: Props und State
+          Ereignisse und bedingtes Rendern
         </h1>
         <Quiz
           quiz={aufgabe}
@@ -136,7 +159,7 @@ const L2C1 = () => {
         </>
       )}
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
-        <Link to="/lesson/2">
+        <Link to="/lesson/3">
           <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
         </Link>
         <Link to="/">
@@ -147,4 +170,4 @@ const L2C1 = () => {
   );
 };
 
-export default L2C1;
+export default L3C1;

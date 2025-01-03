@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import * as monaco from "monaco-editor";
 import Button from "../../Button";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Toast, { ToastType } from "../../Toast";
 
 const L1C1 = () => {
-  const [input, setinput] = useState<string>(lessons.lesson1.task1.default);
+  const [input] = useState<string>(lessons.lesson1.task1.default);
   const [token, setToken] = useState<string>(""); // State to store the token
 
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);

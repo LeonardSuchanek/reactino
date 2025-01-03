@@ -3,6 +3,10 @@
     {
       "name": "Einrichtung",
       "linkTo": "/lesson/0"
+    },
+    {
+      "name": "Aufgabe 1",
+      "linkTo": "/lesson/0/chapter/1"
     }
   ],
   "navItemsLesson1": [
@@ -27,16 +31,16 @@
     {
       "name": "Aufgabe 1",
       "linkTo": "/lesson/2/chapter/1"
-    },
-    {
-      "name": "Aufgabe 2",
-      "linkTo": "/lesson/2/chapter/2"
     }
   ],
   "navItemsLesson3": [
     {
       "name": "Ereignisse und bedingtes Rendern",
       "linkTo": "/lesson/3"
+    },
+    {
+      "name": "Aufgabe 1",
+      "linkTo": "/lesson/3/chapter/1"
     }
   ]
 }
