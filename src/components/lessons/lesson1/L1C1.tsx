@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import * as monaco from "monaco-editor";
 import Button from "../../Button";
@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import Toast, { ToastType } from "../../Toast";
 
 const L1C1 = () => {
-  const [input, setinput] = useState<string>(lessons.lesson1.task1.default);
+  const [input] = useState<string>(lessons.lesson1.task1.default);
+  const [token, setToken] = useState<string>(""); // State to store the token
 
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
@@ -45,7 +46,7 @@ const L1C1 = () => {
         },
         { role: "user", content: editorRef.current?.getValue() || "" },
       ];
-      const chatResponse = await fetchChatGPTResponse(messages);
+      const chatResponse = await fetchChatGPTResponse(token, messages);
       setToast({
         message: chatResponse,
         type: "success",
@@ -69,6 +70,15 @@ const L1C1 = () => {
       <p className="text-xl md:text-2xl mb-3">
         {lessons.lesson1.task1.description}
       </p>
+
+      <input
+        type="text"
+        placeholder="OpenAI Token eingeben um KI Funktionen zu nutzen."
+        className="w-full p-2 mb-4 border-2 border-black bg-cyan-50 text-black"
+        value={token}
+        onChange={(e) => setToken(e.target.value)} // Update the token state
+      //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
+      />
 
       <div className="">
         <Editor
@@ -95,7 +105,7 @@ const L1C1 = () => {
         color="red"
       />
       <Button
-        onClick={() => {}}
+        onClick={() => { }}
         buttonText="Abgeben"
         className="mb-10 ml-4"
         color="lime"

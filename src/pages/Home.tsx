@@ -1,19 +1,13 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CardThumbnail from "../assets/neo-brutalism-image2.jpg";
-import Bild1 from "../assets/1.jpg";
 import ComingSoon from "../assets/coming_soon.jpg";
 import PromotionImage from "../assets/neo-brutalism-image3.jpg";
-import PromotionImageMobile from "../assets/neo-brutalism-image3-mobile.jpg";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import cardMarkup from "../data/cardMarkup";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Header from "../components/Header";
 
 const Home = () => {
   const lektionRef = useRef<HTMLDivElement | null>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const scrollToLektion = () => {
     if (lektionRef.current) {
@@ -61,23 +55,13 @@ const Home = () => {
     <Card
       key="5"
       thumbnail={ComingSoon}
-      subtitle="Lektion 5"
+      subtitle="Lektion 4"
       title="Coming Soon"
       description="Neue spannende Lektionen sind in Arbeit. Schauen doch bald wieder vorbei!"
       callToActionText=""
       calllToActionLink=""
     />,
   ];
-
-  const totalSlides = Math.ceil(cards.length / 3);
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
 
   return (
     <div className="snap-mandatory snap-y overflow-scroll">

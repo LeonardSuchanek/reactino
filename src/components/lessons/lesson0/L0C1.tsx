@@ -7,59 +7,45 @@ import { Link } from "react-router-dom";
 
 export const aufgabe = {
   quizSynopsis:
-    "Testen Sie Ihr Wissen über die Grundlagen von Props und State in React. Viel Erfolg!",
+    "Testen Sie Ihr Wissen über das Erstellen und Einrichten eines React-Projekts. Viel Erfolg!",
   progressBarColor: "#9de1f6",
-  nrOfQuestions: "3",
+  nrOfQuestions: "2",
   questions: [
     {
-      question:
-        "Was ist der Hauptunterschied zwischen Props und State in React?",
+      question: "Welches Tool wird standardmäßig verwendet, um ein neues React-Projekt zu erstellen?",
       questionType: "text",
       answerSelectionType: "single",
       answers: [
-        "Props können verändert werden, State nicht.",
-        "State kann verändert werden, Props nicht.",
-        "Es gibt keinen Unterschied.",
-        "Beides wird nur für Dateninitialisierung verwendet.",
+        "webpack",
+        "Create React App",
+        "Babel",
+        "npm install",
       ],
       correctAnswer: "2",
       messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
       messageForIncorrectAnswer:
-        "Falsche Antwort. Bitte versuchen Sie es erneut.",
+        "Falsche Antwort.",
       explanation:
-        "Props sind unveränderlich (read-only), während State intern geändert werden kann.",
-      point: "20",
-    },
-    {
-      question: "Wie können Props an eine React-Komponente übergeben werden?",
-      questionType: "text",
-      answerSelectionType: "single",
-      answers: [
-        "Als ein Argument in der `render()` Methode.",
-        "Als ein Attribut in JSX.",
-        "Durch Verwendung von `this.props`.",
-        "Durch den Import von `Props` aus React.",
-      ],
-      correctAnswer: "2",
-      messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
-      messageForIncorrectAnswer:
-        "Falsche Antwort. Bitte versuchen Sie es erneut.",
-      explanation:
-        "Props werden an Komponenten über JSX-Attribute übergeben, z. B. `<Component propName={value} />`.",
+        "Create React App (CRA) ist das offizielle Tool, um schnell und einfach ein neues React-Projekt zu erstellen.",
       point: "20",
     },
     {
       question:
-        "Welches Hook wird verwendet, um den State in einer funktionalen Komponente zu verwalten?",
+        "Welche Datei dient als Einstiegspunkt in einer typischen React-Anwendung?",
       questionType: "text",
       answerSelectionType: "single",
-      answers: ["useProps", "useState", "useEffect", "useReducer"],
-      correctAnswer: "2",
+      answers: [
+        "index.js",
+        "App.js",
+        "package.json",
+        "main.css",
+      ],
+      correctAnswer: "1",
       messageForCorrectAnswer: "Richtige Antwort. Gut gemacht!",
       messageForIncorrectAnswer:
-        "Falsche Antwort. Bitte versuchen Sie es erneut.",
+        "Falsche Antwort.",
       explanation:
-        "`useState` ist ein React-Hook, der für die Verwaltung von lokalem State in funktionalen Komponenten verwendet wird.",
+        "Die `index.js` Datei ist der Einstiegspunkt der Anwendung und enthält den Code, um React im DOM zu rendern.",
       point: "20",
     },
   ],
@@ -87,7 +73,7 @@ export const aufgabe = {
   }
 };
 
-const L2C1 = () => {
+const L0C1 = () => {
   const [toast, setToast] = useState<{
     message: string;
     type: ToastType;
@@ -112,8 +98,9 @@ const L2C1 = () => {
   return (
     <main className="max-w-7xl md:justify-self-center">
       <div>
+        <p className="text-xl font-bold md:text-2xl">Aufgabe 1</p>
         <h1 className="font-bold text-4xl md:text-5xl mb-1">
-          Quiz 1: Props und State
+          Projekt erstellen und einrichten
         </h1>
         <Quiz
           quiz={aufgabe}
@@ -136,7 +123,7 @@ const L2C1 = () => {
         </>
       )}
       <div className="fixed bottom-0 left-0 w-full bg-cyan-200 flex justify-center p-4 md:relative md:p-0 md:bg-transparent">
-        <Link to="/lesson/2">
+        <Link to="/lesson/0">
           <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
         </Link>
         <Link to="/">
@@ -147,4 +134,4 @@ const L2C1 = () => {
   );
 };
 
-export default L2C1;
+export default L0C1;
