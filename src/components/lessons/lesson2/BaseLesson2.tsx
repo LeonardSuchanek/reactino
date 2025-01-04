@@ -119,7 +119,7 @@ root.render(<Greeting name="Bob" />);`}
         <Link to="/">
           <Button buttonText="← Zurück" className="mr-4 mb-4" color="lime" />
         </Link>
-        <Link to="/chapter/1">
+        <Link to="/lesson/2/chapter/1">
           <Button buttonText="Zur Aufgabe 1 →" className="" color="red" />
         </Link>
       </div>
