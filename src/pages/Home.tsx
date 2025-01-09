@@ -1,6 +1,13 @@
 import CardThumbnail from "../assets/neo-brutalism-image2.jpg";
-import ComingSoon from "../assets/coming_soon.jpg";
 import PromotionImage from "../assets/neo-brutalism-image3.jpg";
+import lektion0 from "../assets/lektion0.jpg";
+import lektion1 from "../assets/lektion1.jpg";
+import lektion2 from "../assets/lektion2.jpg";
+import lektion3 from "../assets/lektion3.jpg";
+import lektion4 from "../assets/lektion4.jpg";
+
+
+
 import Card from "../components/Card";
 import Button from "../components/Button";
 import { useRef } from "react";
@@ -18,7 +25,7 @@ const Home = () => {
   const cards = [
     <Card
       key="1"
-      thumbnail={CardThumbnail}
+      thumbnail={lektion0}
       subtitle="Einrichtung"
       title="React einrichten und starten"
       description="Erfahren Sie, wie Sie React auf Ihrem Computer einrichten und Ihre erste App starten."
@@ -27,7 +34,7 @@ const Home = () => {
     />,
     <Card
       key="2"
-      thumbnail={CardThumbnail}
+      thumbnail={lektion1}
       subtitle="Lektion 1"
       title="Einführung in React und Komponenten"
       description="Lernen Sie die Grundlagen von React und wie Sie Ihre erste Komponente erstellen."
@@ -36,7 +43,7 @@ const Home = () => {
     />,
     <Card
       key="3"
-      thumbnail={CardThumbnail}
+      thumbnail={lektion2}
       subtitle="Lektion 2"
       title="Props und State"
       description="Entdecken Sie, wie Daten in React-Komponenten verwaltet und weitergegeben werden."
@@ -45,7 +52,7 @@ const Home = () => {
     />,
     <Card
       key="4"
-      thumbnail={CardThumbnail}
+      thumbnail={lektion3}
       subtitle="Lektion 3"
       title="Ereignisse und Bedingtes Rendern"
       description="Lernen Sie, wie Sie Benutzerinteraktionen verarbeiten und dynamische Inhalte anzeigen."
@@ -54,7 +61,7 @@ const Home = () => {
     />,
     <Card
       key="5"
-      thumbnail={ComingSoon}
+      thumbnail={lektion4}
       subtitle="Lektion 4"
       title="Coming Soon"
       description="Neue spannende Lektionen sind in Arbeit. Schauen doch bald wieder vorbei!"
