@@ -77,7 +77,7 @@ const L1C1 = () => {
         className="w-full p-2 mb-4 border-2 border-black bg-cyan-50 text-black"
         value={token}
         onChange={(e) => setToken(e.target.value)} // Update the token state
-      //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
+
       />
 
       <div className="">
