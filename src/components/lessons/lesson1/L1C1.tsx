@@ -25,6 +25,7 @@ const L1C1 = () => {
   };
 
   const handleSend = async () => {
+    setToken(token.replace(/\s/g, ""));
     console.log("Sending code to OpenAI");
 
     try {
@@ -77,7 +78,6 @@ const L1C1 = () => {
         className="w-full p-2 mb-4 border-2 border-black bg-cyan-50 text-black"
         value={token}
         onChange={(e) => setToken(e.target.value)} // Update the token state
-
       />
 
       <div className="">
@@ -105,7 +105,7 @@ const L1C1 = () => {
         color="red"
       />
       <Button
-        onClick={() => { }}
+        onClick={() => {}}
         buttonText="Abgeben"
         className="mb-10 ml-4"
         color="lime"
