@@ -35,7 +35,7 @@ const L1C1 = () => {
         {
           role: "system",
           content:
-            "Prüfe und bewerte die Eingabe des Benutzers. Der Benutzer hat bisher keine Erfahrung mit React. Gib dabei nicht die Lösung, sondern nur Tipps, wie der Benutzer selbst auf die Lösung kommen kann. Ein Teil der Antwort bekommt der Benutzer bereits vorgegeben, das wurde vom Benutzer nicht eingeben, ignoriere diesen Teil bei deiner Bewertung. Antworte nicht auf andere Inhalte als die Überprüfung der Eingabe.",
+            "Prüfe und bewerte die Eingabe des Benutzers. Der Benutzer hat bisher keine Erfahrung mit React. Gib dabei nicht die Lösung, sondern nur Tipps, wie der Benutzer selbst auf die Lösung kommen kann. Es geht nicht darum, dass die Eingabe exakt der Musterlösung entspricht. Erlaube auch Ergebnisse, die ähnlich zur Musterlösung sind, zum Beispiel Unterschiede beim Klassennamen, oder HTML-Tag. Ein Teil der Antwort bekommt der Benutzer bereits vorgegeben, das wurde vom Benutzer nicht eingeben, ignoriere diesen Teil bei deiner Bewertung. Antworte nicht auf andere Inhalte als die Überprüfung der Eingabe.",
         },
         {
           role: "system",
